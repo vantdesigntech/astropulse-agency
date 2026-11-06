@@ -1,938 +1,2060 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASTROPULSE — Social Media Marketing & Algorithmic Growth Agency</title>
-  
-  <!-- Inter font from Google Fonts -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASTROPULSE AGENCY — Orbital Social Media & Algorithmic Traffic</title>
+  <meta name="description" content="Astropulse Agency merges Swiss editorial precision with SpaceX-grade algorithmic telemetry to scale brands across TikTok, Meta, and YouTube." />
+
+  <!-- Google Fonts: Inter (300 Light, 400 Regular, 500 Medium, 600 SemiBold) + Barlow Condensed (SpaceX D-DIN Telemetry Alternative) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          colors: {
-            'astro-red': '#AF181A',
-            'astro-red-dark': '#8e1214',
-            'astro-black': '#101010',
-            'astro-gray-bg': '#F5F5F7',
-            'astro-gray-card': '#EAEAEA',
-            'astro-border': 'rgba(16, 16, 16, 0.1)',
-            'astro-subtext': '#606060',
-          },
-          letterSpacing: {
-            tighter: '-0.04em',
-            tight: '-0.02em',
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #101010;
-      background-color: #FFFFFF;
-      overflow-x: hidden;
+    /* ==========================================================================
+       01. DESIGN TOKENS — ASTRO TRAFFIC (BEHANCE) × SPACEX TELEMETRY SYSTEM
+       Multi-Layered Grayscale + Titanium + Carbon + Surgical Crimson (#AF181A)
+       ========================================================================== */
+    :root {
+      /* Layered Grayscale Surfaces (Playing with Grays, Concrete, Titanium & Carbon) */
+      --bg-mist: #ECECEE;           /* Primary architectural light-gray canvas */
+      --bg-concrete: #E2E3E7;       /* Secondary bento cards & structural bands */
+      --bg-steel: #D6D8E0;          /* Elevated/recessed gray blocks & hover states */
+      --bg-titanium-tint: #C9CCD6;  /* Deeper metallic gray accent surface */
+      --bg-pure-panel: #F5F5F7;     /* Softened white highlight surface */
+
+      /* SpaceX Dark Carbon & Graphite Surfaces */
+      --spacex-void: #0A0B0E;       /* Deepest orbital black */
+      --spacex-carbon: #12141B;     /* SpaceX mission control dark canvas */
+      --spacex-graphite: #1C1F2A;   /* Dark telemetry cards & steel panels */
+      --spacex-slate: #2A2E3D;      /* Dark hairline & metallic frame */
+
+      /* Typography Ink Hierarchy */
+      --ink-primary: #16181F;       /* Deep charcoal (never harsh pure #000 on light) */
+      --ink-secondary: #5A5E6B;     /* Engineered slate gray for body copy */
+      --ink-titanium: #7C808E;      /* Muted technical captions & micro-labels */
+      --ink-on-dark: #F2F3F7;       /* Crisp telemetry white on SpaceX bands */
+      --ink-on-dark-mute: #9499A8;  /* Muted silver on dark surfaces */
+
+      /* Surgical Brand Accent */
+      --astro-crimson: #AF181A;     /* Signature Astro Traffic crimson */
+      --astro-crimson-hover: #921214;
+      --astro-crimson-glow: rgba(175, 24, 26, 0.22);
+
+      /* Structural Hairlines */
+      --line-light: rgba(22, 24, 31, 0.11);
+      --line-light-strong: rgba(22, 24, 31, 0.22);
+      --line-dark: rgba(255, 255, 255, 0.10);
+      --line-dark-strong: rgba(255, 255, 255, 0.28);
+
+      /* Typography Families */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-telemetry: 'Barlow Condensed', 'D-DIN', 'Arial Narrow', sans-serif;
+
+      /* Exact Behance 4-Column Asymmetric Proportions (440px | 172px | 172px | 596px = 1380px) */
+      --col-1: 31.884%;
+      --col-2: 12.464%;
+      --col-3: 12.464%;
+      --col-4: 43.188%;
+    }
+
+    /* ==========================================================================
+       02. RESET & BASE ARCHITECTURAL CANVAS
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-sans);
+      background-color: var(--bg-mist);
+      color: var(--ink-primary);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Red square marker */
-    .red-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background-color: #AF181A;
-      margin-right: 6px;
+    body {
+      background-color: var(--bg-mist);
+      overflow-x: hidden;
+      position: relative;
     }
 
-    /* Grid lines */
-    .border-technical {
-      border-color: rgba(16, 16, 16, 0.1);
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
 
-    /* Vertical text */
-    .vertical-lr {
-      writing-mode: vertical-lr;
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
     }
 
-    /* Accordion transitions */
-    .faq-answer {
-      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    /* ==========================================================================
+       03. TYPOGRAPHY WEIGHT UTILITIES (True to Behance Light 300 / Medium 500)
+       ========================================================================== */
+    .fw-300 { font-weight: 300; }
+    .fw-400 { font-weight: 400; }
+    .fw-500 { font-weight: 500; }
+    .fw-600 { font-weight: 600; }
+    .text-crimson { color: var(--astro-crimson); }
+    .text-titanium { color: var(--ink-titanium); }
+    .text-secondary { color: var(--ink-secondary); }
+
+    /* SpaceX Telemetry Micro-Typography */
+    .telemetry-tag {
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1;
     }
 
-    /* Smooth button hover */
-    .btn-red-hover {
-      transition: all 0.25s ease;
+    /* SpaceX Signature Ghost Pill Button */
+    .btn-spacex-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-telemetry);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 11px 26px;
+      border-radius: 32px;
+      border: 1px solid var(--ink-primary);
+      background: transparent;
+      color: var(--ink-primary);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-red-hover:hover {
-      background-color: #8e1214;
+
+    .btn-spacex-pill:hover {
+      background: var(--ink-primary);
+      color: var(--bg-mist);
       transform: translateY(-1px);
     }
 
-    /* Image zoom on hover */
-    .img-zoom {
-      transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+    .btn-spacex-pill--dark {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: var(--ink-on-dark);
     }
-    .group:hover .img-zoom {
+
+    .btn-spacex-pill--dark:hover {
+      background: var(--ink-on-dark);
+      color: var(--spacex-void);
+      border-color: var(--ink-on-dark);
+    }
+
+    /* ==========================================================================
+       04. CONTINUOUS 4-COLUMN SWISS GRID CONTAINER (440 / 172 / 172 / 596)
+       ========================================================================== */
+    .astro-shell {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .grid-guides {
+      position: absolute;
+      inset: 0 20px;
+      pointer-events: none;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: var(--col-1) var(--col-2) var(--col-3) var(--col-4);
+      border-left: 1px solid var(--line-light);
+      border-right: 1px solid var(--line-light);
+    }
+
+    .grid-guides > div {
+      border-right: 1px solid var(--line-light);
+      height: 100%;
+    }
+    .grid-guides > div:last-child {
+      border-right: none;
+    }
+
+    .grid-guides--dark {
+      border-left-color: var(--line-dark);
+      border-right-color: var(--line-dark);
+    }
+    .grid-guides--dark > div {
+      border-right-color: var(--line-dark);
+    }
+
+    .astro-row {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: var(--col-1) var(--col-2) var(--col-3) var(--col-4);
+    }
+
+    /* Small Geometric Marker Squares (Signature of Behance Reference) */
+    .sq-black {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: var(--ink-primary);
+    }
+
+    .sq-crimson {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--astro-crimson);
+    }
+
+    .sq-gray {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--ink-titanium);
+    }
+
+    /* ==========================================================================
+       05. SPACEX TOP TELEMETRY BAR + STICKY NAVIGATION
+       ========================================================================== */
+    .telemetry-topbar {
+      background-color: var(--spacex-carbon);
+      color: var(--ink-on-dark-mute);
+      border-bottom: 1px solid var(--spacex-slate);
+      font-family: var(--font-telemetry);
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .telemetry-topbar__inner {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .telemetry-pulse {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--astro-crimson);
+      box-shadow: 0 0 8px var(--astro-crimson);
+      margin-right: 6px;
+      animation: pulseOrb 2s infinite;
+    }
+
+    @keyframes pulseOrb {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(236, 236, 238, 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .header-grid {
+      align-items: center;
+      min-height: 68px;
+    }
+
+    .brand-logo {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+      display: inline-flex;
+      flex-direction: column;
+      padding-left: 2px;
+    }
+
+    .brand-logo span:last-child {
+      font-weight: 400;
+      color: var(--ink-secondary);
+    }
+
+    .nav-cell {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 12.5px;
+      font-weight: 400;
+      color: var(--ink-secondary);
+    }
+
+    .nav-cell a:hover {
+      color: var(--astro-crimson);
+    }
+
+    .nav-col-4 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 14px;
+    }
+
+    .nav-links-inline {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      font-size: 12.5px;
+      color: var(--ink-secondary);
+    }
+
+    .nav-links-inline a:hover {
+      color: var(--astro-crimson);
+    }
+
+    /* ==========================================================================
+       06. HERO SECTION (1:1 Behance Asymmetric Composition + Grayscale Depth)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding-top: 28px;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    /* Column 1: Small Monochrome Detail + Giant Stacked ASTRO PULSE + Bottom Note */
+    .hero-col-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 24px;
+      padding-bottom: 26px;
+    }
+
+    .hero-thumb-box {
+      width: 78px;
+      height: 78px;
+      background-color: var(--bg-steel);
+      border: 1px solid var(--line-light);
+      overflow: hidden;
+      margin-top: 52px;
+      position: relative;
+    }
+
+    .hero-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.08);
+    }
+
+    .hero-main-title {
+      font-family: var(--font-sans);
+      font-size: clamp(58px, 6.1vw, 88px);
+      line-height: 0.94;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+      margin-top: 145px;
+      margin-bottom: 36px;
+    }
+
+    .hero-col-1-footer {
+      border-top: 1px solid var(--line-light);
+      padding-top: 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .hero-micro-copy {
+      font-size: 11px;
+      line-height: 1.48;
+      color: var(--ink-titanium);
+      max-width: 240px;
+    }
+
+    /* Column 2: Targeted traffic callout + middle description + Contact Us link */
+    .hero-col-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 14px 26px 14px;
+    }
+
+    .hero-callout {
+      margin-top: 12px;
+    }
+
+    .hero-callout__title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      margin-top: 10px;
+      margin-bottom: 14px;
+      color: var(--ink-primary);
+    }
+
+    .link-underlined {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink-titanium);
+      border-bottom: 1px solid var(--ink-titanium);
+      padding-bottom: 1px;
+    }
+
+    .link-underlined:hover {
+      color: var(--astro-crimson);
+      border-bottom-color: var(--astro-crimson);
+    }
+
+    .hero-col-2-middle {
+      margin-top: 90px;
+      margin-bottom: auto;
+    }
+
+    .hero-col-2-desc {
+      font-size: 11.5px;
+      line-height: 1.52;
+      color: var(--ink-secondary);
+      margin-bottom: 32px;
+    }
+
+    /* Column 3 + 4 Combined: Astronaut Stage + Crimson Band + WHAT WE OFFER */
+    .hero-col-3-4 {
+      grid-column: 3 / 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .astronaut-stage {
+      position: relative;
+      width: 100%;
+      min-height: 540px;
+      background: linear-gradient(180deg, var(--bg-mist) 0%, var(--bg-concrete) 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    /* Subtle SpaceX Engineering Telemetry Grid inside the Astronaut Stage */
+    .astronaut-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(22, 24, 31, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(22, 24, 31, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .astronaut-stage__img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Vertical right-edge label (MEDIA BUYING) exactly as in Behance */
+    .vertical-edge-tag {
+      position: absolute;
+      top: 24px;
+      right: 12px;
+      z-index: 5;
+      writing-mode: vertical-rl;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+      border-left: 1px solid var(--ink-primary);
+      padding-left: 6px;
+      padding-bottom: 8px;
+    }
+
+    /* Signature Black Square Corner Button with ↗ Arrow */
+    .corner-action-btn {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      z-index: 6;
+      width: 52px;
+      height: 52px;
+      background-color: var(--spacex-void);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .corner-action-btn:hover {
+      background-color: var(--ink-primary);
       transform: scale(1.04);
+    }
+
+    /* SpaceX Grey Telemetry Strip under Astronaut */
+    .astronaut-telemetry-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-concrete);
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+      padding: 10px 18px;
+      font-family: var(--font-telemetry);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+    }
+
+    /* Giant Mixed-Weight "WHAT WE OFFER" Anchor */
+    .what-we-offer-banner {
+      padding: 36px 0 22px 2px;
+    }
+
+    .what-we-offer-title {
+      font-family: var(--font-sans);
+      font-size: clamp(46px, 5.2vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    /* ==========================================================================
+       07. SERVICES LIST (01–04 Rows on 4-Column Architectural Grid)
+       ========================================================================== */
+    .services-section {
+      position: relative;
+    }
+
+    .service-row {
+      border-bottom: 1px solid var(--line-light);
+      padding: 28px 0;
+      align-items: center;
+      transition: background-color 0.25s ease;
+    }
+
+    .service-row:hover {
+      background-color: rgba(214, 216, 224, 0.45);
+    }
+
+    .service-num {
+      font-family: var(--font-sans);
+      font-size: clamp(32px, 3.1vw, 44px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--astro-crimson);
+      line-height: 1;
+    }
+
+    .service-title-cell {
+      grid-column: 2 / 4;
+      padding: 0 14px;
+    }
+
+    .service-name {
+      font-family: var(--font-sans);
+      font-size: clamp(18px, 1.65vw, 23px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    .service-sub-tag {
+      display: block;
+      font-family: var(--font-telemetry);
+      font-size: 11.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-titanium);
+      margin-top: 4px;
+    }
+
+    .service-desc-cell {
+      grid-column: 4 / 5;
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 24px;
+    }
+
+    .service-desc {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--ink-secondary);
+      max-width: 320px;
+    }
+
+    /* ==========================================================================
+       08. SPACEX FUSION BAND — ORBITAL TELEMETRY & VELOCITY ENGINE
+       (Dark Carbon, Graphite & Brushed Titanium Gray Contrast Section)
+       ========================================================================== */
+    .spacex-band {
+      position: relative;
+      background-color: var(--spacex-carbon);
+      color: var(--ink-on-dark);
+      border-bottom: 1px solid var(--spacex-slate);
+      overflow: hidden;
+    }
+
+    .spacex-band__inner {
+      padding: 64px 0;
+    }
+
+    .spacex-col-left {
+      grid-column: 1 / 3;
+      padding-right: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spacex-eyebrow {
+      font-family: var(--font-telemetry);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-mute);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .spacex-headline {
+      font-family: var(--font-telemetry);
+      font-size: clamp(42px, 4.4vw, 64px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark);
+      margin-bottom: 22px;
+    }
+
+    .spacex-lead {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--ink-on-dark-mute);
+      max-width: 460px;
+      margin-bottom: 32px;
+    }
+
+    .spacex-telemetry-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .spacex-stat-box {
+      background-color: var(--spacex-graphite);
+      border: 1px solid var(--spacex-slate);
+      padding: 16px;
+    }
+
+    .spacex-stat-box__val {
+      font-family: var(--font-telemetry);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-on-dark);
+    }
+
+    .spacex-stat-box__lbl {
+      font-family: var(--font-telemetry);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-on-dark-mute);
+      margin-top: 4px;
+    }
+
+    .spacex-col-right {
+      grid-column: 3 / 5;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spacex-visual-frame {
+      position: relative;
+      height: 360px;
+      background-color: var(--spacex-void);
+      border: 1px solid var(--spacex-slate);
+      overflow: hidden;
+    }
+
+    .spacex-visual-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .spacex-hud-overlay {
+      position: absolute;
+      inset: 16px;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .spacex-hud-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-telemetry);
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(242, 243, 247, 0.82);
+      background: rgba(10, 11, 14, 0.65);
+      backdrop-filter: blur(4px);
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* ==========================================================================
+       09. OUR EXPERIENCE — OUR PRIDE (True Behance Layout: Card 1 | Title | Card 2 & 3)
+       ========================================================================== */
+    .experience-section {
+      padding: 84px 0 64px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .experience-grid {
+      align-items: start;
+    }
+
+    .case-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-card--col-1 {
+      padding-right: 20px;
+    }
+
+    .case-photo-wrap {
+      width: 100%;
+      height: 340px;
+      background-color: var(--bg-steel);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 16px;
+      border: 1px solid var(--line-light);
+    }
+
+    .case-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .case-card:hover .case-photo-wrap img {
+      transform: scale(1.03);
+    }
+
+    .case-client-name {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .case-roas-tag {
+      font-family: var(--font-telemetry);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      background-color: var(--bg-concrete);
+      border: 1px solid var(--line-light-strong);
+      color: var(--astro-crimson);
+    }
+
+    .case-quote {
+      font-size: 11.5px;
+      line-height: 1.52;
+      color: var(--ink-titanium);
+    }
+
+    /* Middle Column (Cols 2 & 3): OUR EXPERIENCE — OUR PRIDE aligned to bottom of Card 1 photo */
+    .experience-center-header {
+      grid-column: 2 / 4;
+      height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 16px 4px 16px;
+      position: relative;
+    }
+
+    .experience-title {
+      font-family: var(--font-sans);
+      font-size: clamp(28px, 2.75vw, 39px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    .experience-center-header .sq-crimson {
+      position: absolute;
+      right: 16px;
+      bottom: 8px;
+    }
+
+    /* Column 4: Two Case Cards Side by Side */
+    .experience-col-4 {
+      grid-column: 4 / 5;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding-left: 14px;
+    }
+
+    /* ==========================================================================
+       10. ASTROPULSE AS A GLOBAL AGENCY (Multi-Tone Gray Bento Grid)
+       ========================================================================== */
+    .global-section {
+      padding: 76px 0 84px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .global-header-row {
+      margin-bottom: 42px;
+      align-items: end;
+    }
+
+    .global-left-note {
+      grid-column: 1 / 3;
+      padding-right: 24px;
+    }
+
+    .global-left-note__text {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.28;
+      margin: 8px 0 10px 0;
+    }
+
+    .global-right-title {
+      grid-column: 3 / 5;
+      padding-left: 14px;
+    }
+
+    .global-title {
+      font-family: var(--font-sans);
+      font-size: clamp(42px, 4.6vw, 66px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    /* 2-Row Architectural Gray Bento Grid (Playing with Distinct Gray Tones) */
+    .bento-top-row {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 44.348% 55.652%;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .bento-bottom-row {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 31.884% 24.928% 43.188%;
+      gap: 16px;
+    }
+
+    .bento-card {
+      background-color: var(--bg-concrete);
+      border: 1px solid var(--line-light);
+      padding: 28px 26px 24px 26px;
+      min-height: 215px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .bento-card--tone-2 {
+      background-color: var(--bg-steel);
+    }
+
+    .bento-card--tone-3 {
+      background-color: #DCDFE6;
+    }
+
+    .bento-card:hover {
+      border-color: var(--ink-titanium);
+    }
+
+    .bento-card__top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .bento-number {
+      font-family: var(--font-sans);
+      font-size: clamp(40px, 4vw, 56px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink-primary);
+    }
+
+    .bento-micro-note {
+      font-size: 10.5px;
+      line-height: 1.45;
+      color: var(--ink-titanium);
+      max-width: 195px;
+      text-align: left;
+    }
+
+    .bento-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-secondary);
+      letter-spacing: -0.01em;
+    }
+
+    /* ==========================================================================
+       11. OUR TEAM (Staggered Skyline 6-Portrait Row — 1:1 Behance Silhouette)
+       ========================================================================== */
+    .team-section {
+      padding: 78px 0 64px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .team-header {
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-title {
+      font-family: var(--font-sans);
+      font-size: clamp(44px, 4.8vw, 68px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    /* 6-Column Staggered Skyline Aligned at Bottom Baseline */
+    .team-skyline {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr 1.08fr 1.38fr 0.95fr 1.05fr 1.02fr;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .crew-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .crew-photo-box {
+      width: 100%;
+      background-color: var(--bg-steel);
+      border: 1px solid var(--line-light);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    /* Exact Staggered Heights from Behance Reference (thumb_8_12000.jpg) */
+    .crew-item:nth-child(1) .crew-photo-box { height: 245px; }
+    .crew-item:nth-child(2) .crew-photo-box { height: 310px; }
+    .crew-item:nth-child(3) .crew-photo-box { height: 375px; }
+    .crew-item:nth-child(4) .crew-photo-box { height: 225px; }
+    .crew-item:nth-child(5) .crew-photo-box { height: 295px; }
+    .crew-item:nth-child(6) .crew-photo-box { height: 310px; }
+
+    .crew-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.45s ease;
+    }
+
+    .crew-item:hover .crew-photo-box img {
+      transform: scale(1.04);
+    }
+
+    .crew-role {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .crew-sub {
+      font-family: var(--font-telemetry);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-titanium);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       12. LET'S GET IN TOUCH (Staggered Title + Minimalist Line Form)
+       ========================================================================== */
+    .contact-section {
+      padding: 84px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .contact-col-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-right: 24px;
+      min-height: 220px;
+    }
+
+    .contact-col-2-3 {
+      grid-column: 2 / 4;
+      padding: 0 14px;
+    }
+
+    .contact-staggered-title {
+      font-family: var(--font-sans);
+      font-size: clamp(36px, 3.8vw, 54px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    .contact-staggered-title .indent-line {
+      display: block;
+      padding-left: 44px;
+    }
+
+    .contact-staggered-title .indent-line-sm {
+      display: block;
+      padding-left: 18px;
+    }
+
+    .contact-col-4 {
+      grid-column: 4 / 5;
+      padding-left: 16px;
+    }
+
+    .minimal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .form-row-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .input-line-group {
+      position: relative;
+    }
+
+    .input-line {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line-light-strong);
+      padding: 10px 0;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--ink-primary);
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .input-line::placeholder {
+      color: var(--ink-titanium);
+    }
+
+    .input-line:focus {
+      border-bottom-color: var(--astro-crimson);
+    }
+
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+
+    .submit-arrow-btn {
+      background: transparent;
+      border: none;
+      color: var(--astro-crimson);
+      font-size: 26px;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: transform 0.25s ease;
+    }
+
+    .submit-arrow-btn:hover {
+      transform: translateX(6px);
+    }
+
+    /* ==========================================================================
+       13. FREQUENTLY QUESTIONS (Left Custom Astronaut + Right Accordion)
+       ========================================================================== */
+    .faq-section {
+      padding: 84px 0 96px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .faq-col-1 {
+      padding-right: 16px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .faq-astronaut-box {
+      width: 100%;
+      height: 410px;
+      background-color: var(--bg-concrete);
+      border: 1px solid var(--line-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .faq-astronaut-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .faq-col-3-4 {
+      grid-column: 3 / 5;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .faq-title {
+      font-family: var(--font-sans);
+      font-size: clamp(36px, 3.8vw, 54px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+      margin-bottom: 36px;
+    }
+
+    .faq-list {
+      max-width: 540px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line-light);
+      padding: 16px 0;
+      cursor: pointer;
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-primary);
+      transition: color 0.2s ease;
+    }
+
+    .faq-item.active .faq-question {
+      color: var(--astro-crimson);
+    }
+
+    .faq-answer {
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--astro-crimson);
+      opacity: 0.85;
+      margin-top: 10px;
+      display: none;
+      padding-right: 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-corner-thumb {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 74px;
+      height: 74px;
+      background-color: var(--bg-steel);
+      border: 1px solid var(--line-light);
+      overflow: hidden;
+    }
+
+    .faq-corner-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    /* ==========================================================================
+       14. FOOTER (Recessed Architectural Gray + Bottom Helmet Peek + SpaceX Bar)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-concrete);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-main {
+      padding: 44px 0 52px 0;
+      align-items: start;
+    }
+
+    .footer-col-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 110px;
+    }
+
+    .footer-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--ink-titanium);
+      padding: 0 14px;
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      font-size: 11.5px;
+      color: var(--ink-secondary);
+      padding: 0 14px;
+    }
+
+    .footer-helmet-peek {
+      position: absolute;
+      right: 20px;
+      bottom: 0;
+      width: 240px;
+      height: 115px;
+      overflow: hidden;
+      z-index: 3;
+      border-top: 1px solid var(--line-light);
+    }
+
+    .footer-helmet-peek img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .spacex-bottom-seal {
+      background-color: var(--spacex-void);
+      color: var(--ink-on-dark-mute);
+      padding: 14px 20px;
+      font-family: var(--font-telemetry);
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--spacex-slate);
+    }
+
+    .spacex-bottom-seal__inner {
+      max-width: 1420px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       15. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .astro-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-guides {
+        display: none;
+      }
+      .hero-col-3-4,
+      .service-title-cell,
+      .service-desc-cell,
+      .spacex-col-left,
+      .spacex-col-right,
+      .experience-center-header,
+      .experience-col-4,
+      .global-left-note,
+      .global-right-title,
+      .contact-col-2-3,
+      .contact-col-4,
+      .faq-col-3-4 {
+        grid-column: span 2;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .team-skyline {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .bento-top-row,
+      .bento-bottom-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .astro-row,
+      .experience-col-4,
+      .team-skyline,
+      .spacex-telemetry-cards,
+      .form-row-split {
+        grid-template-columns: 1fr;
+      }
+      .nav-cell,
+      .nav-links-inline {
+        display: none;
+      }
+      .astronaut-stage {
+        min-height: 380px;
+      }
+      .astronaut-stage__img {
+        height: 380px;
+      }
+      .experience-center-header {
+        height: auto;
+        padding: 28px 0;
+      }
+      .faq-corner-thumb,
+      .footer-helmet-peek {
+        display: none;
+      }
     }
   </style>
 </head>
-<body class="selection:bg-astro-red selection:text-white">
+<body>
 
-  <!-- TOP TECHNICAL BAR -->
-  <div class="border-b border-technical py-2 px-6 lg:px-16 text-[11px] text-astro-subtext font-mono flex justify-between items-center tracking-wider uppercase">
-    <div class="flex items-center gap-3">
-      <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-      <span>MISSION STATUS: ACTIVE LAUNCH</span>
-      <span class="hidden sm:inline text-gray-300">|</span>
-      <span class="hidden sm:inline">COORDINATES: TIKTOK / META / YOUTUBE</span>
-    </div>
-    <div class="flex items-center gap-6">
-      <span>TELEMETRY: LIVE</span>
-      <span>EST. 2026</span>
+  <!-- ========================================================================
+       01. SPACEX ORBITAL TELEMETRY TOP BAR (Dark Carbon #12141B + Silver/Crimson)
+       ======================================================================== -->
+  <div class="telemetry-topbar">
+    <div class="telemetry-topbar__inner">
+      <div>
+        <span class="telemetry-pulse"></span>
+        <span>ASTROPULSE FLIGHT CONTROL // MISSION STATUS: NOMINAL</span>
+      </div>
+      <div>
+        <span>ORBITAL VECTORS: TIKTOK · META · YOUTUBE SHORTS · PAID SOCIAL</span>
+      </div>
+      <div>
+        <span>TELEMETRY: 99.98% ATTRIBUTION LOCK // T+00:24:18</span>
+      </div>
     </div>
   </div>
 
-  <!-- HEADER / NAVBAR -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-technical transition-all duration-200">
-    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#hero" class="flex items-center gap-2 group">
-        <span class="font-extrabold text-2xl tracking-tighter uppercase text-astro-black">
-          ASTRO<span class="text-astro-red">.</span>PULSE
-        </span>
-        <div class="w-2 h-2 bg-astro-red"></div>
-      </a>
+  <!-- ========================================================================
+       02. STICKY ARCHITECTURAL HEADER (Aligned to 4-Column Grid)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="astro-shell">
+      <div class="astro-row header-grid">
+        <!-- Col 1: Stacked Brand Wordmark -->
+        <div>
+          <a href="#" class="brand-logo">
+            <span>ASTRO</span>
+            <span>PULSE</span>
+          </a>
+        </div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-[13px] font-semibold tracking-wide uppercase">
-        <a href="#services" class="text-astro-subtext hover:text-astro-black transition-colors">What We Offer</a>
-        <a href="#metrics" class="text-astro-subtext hover:text-astro-black transition-colors">Global Agency</a>
-        <a href="#cases" class="text-astro-subtext hover:text-astro-black transition-colors">Experience</a>
-        <a href="#team" class="text-astro-subtext hover:text-astro-black transition-colors">Our Team</a>
-        <a href="#faq" class="text-astro-subtext hover:text-astro-black transition-colors">FAQ</a>
-      </nav>
+        <!-- Col 2: What we offer -->
+        <div class="nav-cell">
+          <a href="#offer">What we offer</a>
+        </div>
 
-      <!-- CTA Action -->
-      <div class="flex items-center gap-4">
-        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-3 border border-astro-black text-xs font-bold uppercase tracking-wider text-astro-black hover:bg-astro-black hover:text-white transition-all duration-200">
-          Launch Mission
-        </a>
-        <a href="#contact" class="inline-flex items-center justify-center px-4 py-3 bg-astro-red text-white text-xs font-bold uppercase tracking-wider btn-red-hover">
-          Contact Us
-        </a>
+        <!-- Col 3: Cases -->
+        <div class="nav-cell">
+          <a href="#cases">Cases</a>
+        </div>
+
+        <!-- Col 4: Advantages, Our team, FAQ + SpaceX Ghost Pill CTA -->
+        <div class="nav-col-4">
+          <nav class="nav-links-inline">
+            <a href="#advantages">Advantages</a>
+            <a href="#team">Our team</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <a href="#contact" class="btn-spacex-pill">Contact Us</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative border-b border-technical overflow-hidden pt-8 lg:pt-14 pb-12 lg:pb-16 bg-[#FAFAFA]">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          <!-- Left Column: Title & Mission Description -->
-          <div class="lg:col-span-5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-2 mb-4">
-                <span class="red-dot"></span>
-                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-astro-red">
-                  Targeted Social Media Traffic & Media Buying
-                </span>
-              </div>
+  <!-- ========================================================================
+       MAIN LIGHT-GRAY ARCHITECTURAL CANVAS (With Continuous 4-Col Grid Lines)
+       ======================================================================== -->
+  <div class="astro-shell">
+    <div class="grid-guides" aria-hidden="true">
+      <div></div><div></div><div></div><div></div>
+    </div>
 
-              <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black uppercase tracking-tighter leading-[0.92] text-astro-black mb-6">
-                ASTRO<br>PULSE
-              </h1>
+    <!-- ======================================================================
+         03. HERO SECTION (1:1 Behance Proportions + Original Custom Astronaut)
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="astro-row">
 
-              <p class="text-base text-astro-subtext font-normal leading-relaxed max-w-md mb-8">
-                We're not here for empty clicks — we're here for scale. With data-backed media buying, aggressive creative testing, and multi-platform algorithmic optimization, we turn ad spend into exponential brand revenue.
-              </p>
-            </div>
-
-            <!-- Floating Technical Micro-Card -->
-            <div class="p-5 bg-white border border-technical rounded-sm shadow-sm flex items-start gap-4 max-w-md">
-              <div class="w-14 h-14 bg-astro-gray-bg border border-technical flex-shrink-0 overflow-hidden relative">
-                <img src="assets/case_1.png" alt="Campaign telemetry" class="w-full h-full object-cover grayscale contrast-125">
-                <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-astro-red"></div>
-              </div>
-              <div class="flex-1 text-xs">
-                <div class="font-bold uppercase tracking-tight text-astro-black mb-1">
-                  Algorithmic Recon & Growth
-                </div>
-                <p class="text-astro-subtext leading-relaxed mb-2">
-                  Hyper-targeted paid distribution with real-time conversion feedback across TikTok and Meta.
-                </p>
-                <a href="#services" class="font-bold text-astro-red hover:underline flex items-center gap-1">
-                  Explore Mission Protocols <span>→</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Quick Action Links -->
-            <div class="flex items-center gap-6 mt-8 pt-6 border-t border-technical text-xs font-bold uppercase tracking-wider">
-              <a href="#contact" class="hover:text-astro-red transition-colors flex items-center gap-1.5">
-                <span>▪</span> Book Discovery Call
-              </a>
-              <a href="#metrics" class="text-astro-subtext hover:text-astro-black transition-colors">
-                View 2026 Telemetry
-              </a>
-            </div>
+        <!-- Column 1 (31.88%): Detail Thumb + Giant ASTRO PULSE + Micro Footer -->
+        <div class="hero-col-1">
+          <div class="hero-thumb-box">
+            <img src="assets/custom_astronaut_thumb.png" alt="Orbital Mission Control Detail" />
           </div>
 
-          <!-- Right Column: Hero Astronaut Visual & Red Accent -->
-          <div class="lg:col-span-7 relative">
-            <div class="relative bg-white border border-technical p-4 sm:p-6 shadow-xl overflow-hidden rounded-sm">
-              
-              <!-- Astronaut Hero Graphic -->
-              <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] bg-[#F3F3F3] flex items-center justify-center overflow-hidden">
-                <img 
-                  src="assets/hero_astronaut_pure.png" 
-                  alt="AstroPulse Commander" 
-                  class="w-full h-full object-cover object-center filter contrast-105"
-                >
+          <h1 class="hero-main-title">
+            <span class="fw-500">ASTRO</span><br />
+            <span class="fw-400">PULSE</span>
+          </h1>
 
-                <!-- Lateral Mission Label -->
-                <div class="absolute top-6 right-6 hidden sm:flex items-center gap-2">
-                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-astro-black bg-white/90 backdrop-blur px-2.5 py-1 border border-technical">
-                    ALGORITHMIC UNIT 01
-                  </span>
-                </div>
-
-                <!-- Floating Mission Tag on the left -->
-                <div class="absolute bottom-6 left-6 hidden sm:block bg-white/95 backdrop-blur px-3 py-1.5 border border-technical text-[10px] font-mono font-bold uppercase tracking-wider text-astro-black">
-                  <span class="text-astro-red">●</span> ORBITAL MEDIA BUYING
-                </div>
-
-                <!-- Interactive Corner Action -->
-                <a href="#services" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 bg-astro-black text-white flex items-center justify-center text-lg font-bold hover:bg-astro-red transition-all duration-200 group">
-                  <span class="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
-                </a>
-              </div>
-
-              <!-- Bottom Strip of Hero Card -->
-              <div class="mt-4 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-astro-subtext pt-2 border-t border-technical">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 bg-astro-red"></span>
-                  <span>CAMPAIGN PROTOCOL: FULL REACH</span>
-                </div>
-                <div>AVG ROAS: <span class="font-bold text-astro-black font-sans">4.8X</span></div>
-                <div class="hidden sm:block">STATUS: MISSION READY</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION TITLE: WHAT WE OFFER -->
-    <section id="services" class="pt-20 pb-12 bg-white">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div class="flex items-baseline gap-4 mb-2">
-          <span class="w-3 h-3 bg-astro-red"></span>
-          <span class="text-xs font-mono font-bold uppercase tracking-widest text-astro-red">Protocols & Capabilities</span>
-        </div>
-        <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black mb-12">
-          WHAT WE OFFER
-        </h2>
-
-        <!-- Services Accordion / List (01 to 04 exactly matching reference) -->
-        <div class="border-t border-technical divide-y divide-technical">
-          
-          <!-- 01 ANALYZE AUDIENCE -->
-          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              <div class="md:col-span-2 flex items-baseline gap-4">
-                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">01</span>
-                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Telemetry</span>
-              </div>
-              <div class="md:col-span-5">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
-                  ANALYZE AUDIENCE
-                </h3>
-                <p class="text-sm font-mono text-astro-subtext mt-1">
-                  Algorithmic Profiling & Competitor Reverse-Engineering
-                </p>
-              </div>
-              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
-                We start by dismantling your target audience's digital footprint. Through deep demographic mining, social search behavior analysis, and subculture mapping on TikTok and Instagram, we identify the exact triggers that stop the scroll and build immediate brand resonance.
-              </div>
-            </div>
-          </div>
-
-          <!-- 02 TARGET TRAFFIC -->
-          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              <div class="md:col-span-2 flex items-baseline gap-4">
-                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">02</span>
-                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Acquisition</span>
-              </div>
-              <div class="md:col-span-5">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
-                  TARGET TRAFFIC
-                </h3>
-                <p class="text-sm font-mono text-astro-subtext mt-1">
-                  Paid Social & High-Conversion Funneling
-                </p>
-              </div>
-              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
-                Using surgical media buying architectures on Meta Ads, TikTok Spark Ads, and YouTube Shorts, we drive hyper-qualified prospects directly to high-converting landing pages. Every ad dollar is backed by rapid multivariate testing to guarantee maximum return on ad spend.
-              </div>
-            </div>
-          </div>
-
-          <!-- 03 OPTIMIZE CONVERSIONS -->
-          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              <div class="md:col-span-2 flex items-baseline gap-4">
-                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">03</span>
-                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Creative Ops</span>
-              </div>
-              <div class="md:col-span-5">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
-                  OPTIMIZE CONVERSIONS
-                </h3>
-                <p class="text-sm font-mono text-astro-subtext mt-1">
-                  Viral Creative Production & Attention Retention
-                </p>
-              </div>
-              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
-                Traffic is useless if it doesn't convert. Our creative lab produces high-octane UGC, 3D motion assets, and psychological 3-second hook scripts specifically engineered to turn passive viewers into active customers and high-LTV brand advocates.
-              </div>
-            </div>
-          </div>
-
-          <!-- 04 MEASURE RESULTS -->
-          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              <div class="md:col-span-2 flex items-baseline gap-4">
-                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">04</span>
-                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Telemetry</span>
-              </div>
-              <div class="md:col-span-5">
-                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
-                  MEASURE RESULTS
-                </h3>
-                <p class="text-sm font-mono text-astro-subtext mt-1">
-                  First-Party Telemetry & Attribution Systems
-                </p>
-              </div>
-              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
-                We bypass cookie deprecation with server-side Conversion APIs (CAPI), multi-touch attribution modeling, and automated weekly sprint reports. You get complete transparency on blended RoAS, CAC, retention curves, and scaling velocity.
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: OUR EXPERIENCE — OUR PRIDE & CASE STUDIES -->
-    <section id="cases" class="py-20 bg-astro-gray-bg border-y border-technical">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-          
-          <div class="lg:col-span-4">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="red-dot"></span>
-              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Proven Flight Record</span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-astro-black leading-tight mb-4">
-              OUR EXPERIENCE<br>— OUR PRIDE
-            </h2>
-            <p class="text-sm text-astro-subtext leading-relaxed mb-6">
-              Every campaign is executed like a space mission: zero margin for error, relentless telemetry, and hyper-scalable momentum across competitive markets.
+          <div class="hero-col-1-footer">
+            <p class="hero-micro-copy">
+              Astropulse is your orbital launchpad for paid social traffic, algorithmic creative testing, and measurable multi-platform revenue scale.
             </p>
-            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-astro-black hover:text-astro-red transition-colors">
-              Request Full Case Decks <span>→</span>
+            <span class="sq-crimson" style="margin-top: 4px;"></span>
+          </div>
+        </div>
+
+        <!-- Column 2 (12.46%): Targeted Traffic Callout + Middle Copy + Contact Link -->
+        <div class="hero-col-2">
+          <div class="hero-callout">
+            <span class="sq-black"></span>
+            <p class="hero-callout__title">
+              Targeted <span class="text-crimson">traffic.</span><br />
+              <span class="text-crimson">Real</span> brand<br />
+              velocity.
+            </p>
+            <a href="#offer" class="link-underlined">More Info</a>
+          </div>
+
+          <div class="hero-col-2-middle">
+            <p class="hero-col-2-desc">
+              We're not here for vanity views — we're here for orbital scale. With SpaceX-grade data telemetry, rapid UGC hook testing, and relentless algorithmic optimization, we turn paid social spend into compounding profit.
+            </p>
+            <a href="#contact" class="link-underlined">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Columns 3 & 4 (55.65%): Custom Astronaut + Crimson Band + WHAT WE OFFER -->
+        <div class="hero-col-3-4">
+          <div class="astronaut-stage">
+            <img
+              src="assets/custom_hero_astronaut.png"
+              alt="Astropulse Mission Commander Astronaut with Crimson Telemetry Band"
+              class="astronaut-stage__img"
+            />
+            <span class="vertical-edge-tag">SOCIAL MEDIA BUYING</span>
+            <a href="#contact" class="corner-action-btn" aria-label="Launch Campaign">↗</a>
+          </div>
+
+          <div class="astronaut-telemetry-strip">
+            <span><strong style="color: var(--astro-crimson);">●</strong> PAYLOAD: TIKTOK &amp; META ADS</span>
+            <span>AVG BLENDED ROAS: <strong>4.8X</strong></span>
+            <span>VELOCITY: <strong>MACH-3 SCALE</strong></span>
+          </div>
+
+          <div id="offer" class="what-we-offer-banner">
+            <h2 class="what-we-offer-title">
+              <span class="fw-500">WHAT</span> <span class="fw-300">WE</span> <span class="fw-500">OFFER</span>
+            </h2>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         04. SERVICES ROWS (01–04 Aligned to 4-Column Grid)
+         ====================================================================== -->
+    <section class="services-section">
+
+      <!-- 01 -->
+      <div class="astro-row service-row">
+        <div class="service-num">01</div>
+        <div class="service-title-cell">
+          <h3 class="service-name">ANALYZE AUDIENCE</h3>
+          <span class="service-sub-tag">ALGORITHMIC RECONNAISSANCE // TELEMETRY 01</span>
+        </div>
+        <div class="service-desc-cell">
+          <p class="service-desc">
+            We map your ideal buyer's digital orbit across TikTok, Instagram, and YouTube — decoding behavioral triggers, subculture trends, and competitor ad spend before ignition.
+          </p>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="astro-row service-row">
+        <div class="service-num">02</div>
+        <div class="service-title-cell">
+          <h3 class="service-name">TARGET TRAFFIC</h3>
+          <span class="service-sub-tag">HIGH-VELOCITY PAID SOCIAL // TELEMETRY 02</span>
+        </div>
+        <div class="service-desc-cell">
+          <p class="service-desc">
+            Using precision media buying architectures on Meta Advantage+, TikTok Spark Ads, and YouTube Shorts, we deploy capital only where high-intent conversion velocity is proven.
+          </p>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="astro-row service-row">
+        <div class="service-num">03</div>
+        <div class="service-title-cell">
+          <h3 class="service-name">OPTIMIZE CONVERSIONS</h3>
+          <span class="service-sub-tag">VIRAL CREATIVE LAB &amp; 3-SEC HOOKS // TELEMETRY 03</span>
+        </div>
+        <div class="service-desc-cell">
+          <p class="service-desc">
+            Attention is oxygen. Our creative propulsion studio produces high-converting UGC, 3D motion assets, and landing funnels engineered to slash CAC and multiply click-to-purchase rates.
+          </p>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="astro-row service-row">
+        <div class="service-num">04</div>
+        <div class="service-title-cell">
+          <h3 class="service-name">MEASURE RESULTS</h3>
+          <span class="service-sub-tag">SERVER-SIDE CAPI &amp; LIVE ROAS // TELEMETRY 04</span>
+        </div>
+        <div class="service-desc-cell">
+          <p class="service-desc">
+            Zero blind spots. We deploy server-side Conversion APIs (CAPI), multi-touch attribution, and live mission dashboards so every dollar of ad spend is tracked to net revenue.
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ========================================================================
+       05. SPACEX FUSION BAND — ORBITAL TELEMETRY & VELOCITY ENGINE
+       (Full-Bleed Dark Carbon #12141B + Brushed Titanium #1C1F2A + D-DIN Caps)
+       ======================================================================== -->
+  <section class="spacex-band">
+    <div class="astro-shell">
+      <div class="grid-guides grid-guides--dark" aria-hidden="true">
+        <div></div><div></div><div></div><div></div>
+      </div>
+
+      <div class="astro-row spacex-band__inner">
+        <!-- Left Columns (1 & 2): SpaceX D-DIN Typography + Titanium Stat Boxes -->
+        <div class="spacex-col-left">
+          <div>
+            <div class="spacex-eyebrow">
+              <span class="sq-crimson"></span>
+              <span>SPACEX-GRADE AD TELEMETRY // ORBITAL ENGINE V4.2</span>
+            </div>
+            <h2 class="spacex-headline">
+              ENGINEERED FOR<br />
+              ESCAPE VELOCITY.
+            </h2>
+            <p class="spacex-lead">
+              Inspired by aerospace flight computers, our proprietary media-buying engine monitors 40+ real-time auction signals per second — automatically reallocating budget toward winning creative payloads while terminating underperforming ad sets in milliseconds.
+            </p>
+            <a href="#contact" class="btn-spacex-pill btn-spacex-pill--dark">
+              REQUEST TELEMETRY BRIEFING <span>↗</span>
             </a>
           </div>
 
-          <!-- 3 Editorial Case Cards with exact photo treatment -->
-          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            
-            <!-- Case 1 -->
-            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
-              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
-                <img src="assets/case_1_clean.png" alt="Emma Collins - Campaign Lead" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-red/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
-                  +340% ROAS SCALE
-                </div>
-              </div>
-              <div class="text-xs font-bold uppercase text-astro-black mb-1">NOVA AUDIO TECH</div>
-              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">TIKTOK & META ADS</div>
-              <p class="text-xs text-astro-subtext leading-relaxed">
-                Scaled direct-to-consumer headphone brand from $45k/mo to $380k/mo in 90 days with algorithmic UGC.
-              </p>
+          <div class="spacex-telemetry-cards">
+            <div class="spacex-stat-box">
+              <div class="spacex-stat-box__val">0.4s</div>
+              <div class="spacex-stat-box__lbl">HOOK STOP-RATE THRESHOLD</div>
             </div>
-
-            <!-- Case 2 -->
-            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
-              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
-                <img src="assets/case_2_clean.png" alt="Jason Miller - Creative Lead" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-black/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
-                  42M VIRAL VIEWS
-                </div>
-              </div>
-              <div class="text-xs font-bold uppercase text-astro-black mb-1">PULSAR ENERGY</div>
-              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">ORGANIC VIRAL OPS</div>
-              <p class="text-xs text-astro-subtext leading-relaxed">
-                Engineered 14 consecutive viral short-form videos capturing top market share in fitness beverage niche.
-              </p>
+            <div class="spacex-stat-box">
+              <div class="spacex-stat-box__val" style="color: var(--astro-crimson);">$42M+</div>
+              <div class="spacex-stat-box__lbl">TRACKED CLIENT REVENUE</div>
             </div>
-
-            <!-- Case 3 -->
-            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
-              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
-                <img src="assets/case_3_clean.png" alt="Daniel Brooks - Media Buyer" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-red/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
-                  5.2X BLENDED ROAS
-                </div>
-              </div>
-              <div class="text-xs font-bold uppercase text-astro-black mb-1">AETHEL APPAREL</div>
-              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">GLOBAL EXPANSION</div>
-              <p class="text-xs text-astro-subtext leading-relaxed">
-                Orchestrated paid acquisition rollout into 6 European markets simultaneously with localized creative variations.
-              </p>
+            <div class="spacex-stat-box">
+              <div class="spacex-stat-box__val">24/7</div>
+              <div class="spacex-stat-box__lbl">ALGORITHMIC BID AUTOPILOT</div>
             </div>
-
           </div>
-
         </div>
 
-      </div>
-    </section>
-
-    <!-- SECTION: ASTROPULSE AS A GLOBAL AGENCY (METRICS 100+, 12+, 18+, 4, 97%) -->
-    <section id="metrics" class="py-20 bg-white border-b border-technical">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <div>
-            <div class="flex items-center gap-2 mb-2">
-              <span class="red-dot"></span>
-              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Global Orbit</span>
+        <!-- Right Columns (3 & 4): Custom Orbital Satellite Visual + HUD Overlay -->
+        <div class="spacex-col-right">
+          <div class="spacex-visual-frame">
+            <img
+              src="assets/custom_spacex_orbital.png"
+              alt="Astropulse Orbital Satellite Telemetry Deployment"
+            />
+            <div class="spacex-hud-overlay">
+              <div class="spacex-hud-row">
+                <span>SAT-NODE: ASTRO-09 // ACTIVE</span>
+                <span style="color: var(--astro-crimson);">● LIVE CAPI STREAM</span>
+              </div>
+              <div class="spacex-hud-row">
+                <span>INCLINATION: 51.6° // META + TIKTOK + YT</span>
+                <span>ALTITUDE: 540 KM // ROAS LOCK</span>
+              </div>
             </div>
-            <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black">
-              ASTROPULSE AS A<br><span class="text-astro-red">GLOBAL</span> AGENCY
-            </h2>
           </div>
-          <p class="text-xs font-mono text-astro-subtext max-w-xs leading-relaxed uppercase">
-            AUDITED PERFORMANCE METRICS CUMULATIVE ACROSS 24 MONTHS OF ACTIVE MEDIA BUYING
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       RESUME LIGHT-GRAY ARCHITECTURAL CANVAS
+       ======================================================================== -->
+  <div class="astro-shell">
+    <div class="grid-guides" aria-hidden="true">
+      <div></div><div></div><div></div><div></div>
+    </div>
+
+    <!-- ======================================================================
+         06. OUR EXPERIENCE — OUR PRIDE (True Behance Layout: Card 1 | Title | Card 2 & 3)
+         ====================================================================== -->
+    <section id="cases" class="experience-section">
+      <div class="astro-row experience-grid">
+
+        <!-- Column 1: Case Study 1 (With Crimson Lower Band) -->
+        <article class="case-card case-card--col-1">
+          <div class="case-photo-wrap">
+            <img src="assets/custom_case_1.png" alt="Elena Rostova — Lumina Skin Co." />
+          </div>
+          <h3 class="case-client-name">
+            <span>Elena Rostova</span>
+            <span class="case-roas-tag">+380% ROAS</span>
+          </h3>
+          <p class="case-quote">
+            "My firm, Lumina Aesthetics, needed high-velocity TikTok and Meta customer acquisition. Astropulse engineered our viral UGC creative pipeline and scaled monthly recurring revenue from $45k to $210k in 90 days."
           </p>
-        </div>
+        </article>
 
-        <!-- Metric Grid identical to reference layout -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
-          <!-- Metric 1: 140M+ -->
-          <div class="md:col-span-6 bg-astro-gray-bg border border-technical p-8 sm:p-10 rounded-sm hover:border-astro-black transition-colors">
-            <div class="text-6xl sm:text-7xl font-black tracking-tighter text-astro-black mb-3 font-sans">
-              140M+
-            </div>
-            <div class="text-sm font-bold uppercase text-astro-black mb-1">
-              Qualified Organic & Paid Impressions
-            </div>
-            <p class="text-xs text-astro-subtext leading-relaxed max-w-md">
-              Delivered across TikTok, Meta, and YouTube with audience retention curves exceeding industry averages by 44%.
-            </p>
-          </div>
-
-          <!-- Metric 2: 4.8X -->
-          <div class="md:col-span-6 bg-astro-gray-bg border border-technical p-8 sm:p-10 rounded-sm hover:border-astro-black transition-colors">
-            <div class="text-6xl sm:text-7xl font-black tracking-tighter text-astro-red mb-3 font-sans">
-              4.8x
-            </div>
-            <div class="text-sm font-bold uppercase text-astro-black mb-1">
-              Average Blended Return on Ad Spend (RoAS)
-            </div>
-            <p class="text-xs text-astro-subtext leading-relaxed max-w-md">
-              Proven performance across ecommerce, SaaS, and high-growth consumer products through real-time creative iteration.
-            </p>
-          </div>
-
-          <!-- Metric 3: 18+ -->
-          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
-            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
-              18+
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black mb-1">
-              International Markets
-            </div>
-            <p class="text-[11px] text-astro-subtext leading-relaxed">
-              Active campaigns deployed in North America, Europe, UAE, and Latin America.
-            </p>
-          </div>
-
-          <!-- Metric 4: 4 -->
-          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
-            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
-              4
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black mb-1">
-              Proprietary AI Growth Engines
-            </div>
-            <p class="text-[11px] text-astro-subtext leading-relaxed">
-              In-house trend scrapers, hook analyzers, UGC pipelines, and bidding algorithms.
-            </p>
-          </div>
-
-          <!-- Metric 5: 97% -->
-          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
-            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
-              97%
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black mb-1">
-              Client Retention Rate
-            </div>
-            <p class="text-[11px] text-astro-subtext leading-relaxed">
-              Brands that partner with Astropulse stay for over 12 consecutive months of scaling.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: OUR TEAM -->
-    <section id="team" class="py-20 bg-white border-b border-technical">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <div class="flex items-center justify-center gap-2 mb-2">
-            <span class="red-dot"></span>
-            <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Mission Control Crew</span>
-          </div>
-          <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black">
-            OUR <span class="text-astro-red">TEAM</span>
+        <!-- Columns 2 & 3: Center Section Title (Bottom-Aligned with Photos) -->
+        <div class="experience-center-header">
+          <h2 class="experience-title">
+            <span class="fw-500">OUR</span><br />
+            <span class="fw-400 text-crimson">EXPERIENCE</span><br />
+            <span class="fw-500">— OUR</span><br />
+            <span class="fw-500">PRIDE</span>
           </h2>
-          <p class="text-sm text-astro-subtext mt-4">
-            Elite media buyers, algorithmic strategists, and creative directors dedicated to launching your brand into stratosphere.
-          </p>
+          <span class="sq-crimson"></span>
         </div>
 
-        <!-- Team Gallery with matching red block aesthetics -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          
-          <!-- Member 1 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_1_clean.png" alt="Elena Vance" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
+        <!-- Column 4: Case Study 2 & Case Study 3 Side-by-Side -->
+        <div class="experience-col-4">
+          <article class="case-card">
+            <div class="case-photo-wrap">
+              <img src="assets/custom_case_2.png" alt="Julian Vance — Hyperion Tech" />
             </div>
-            <div class="text-xs font-bold uppercase text-astro-black">Elena Vance</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Head of Growth</div>
-          </div>
-
-          <!-- Member 2 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_2_clean.png" alt="Marcus Drake" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black">Marcus Drake</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Creative Director</div>
-          </div>
-
-          <!-- Member 3 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_3_clean.png" alt="Sofia Chen" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black">Sofia Chen</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Social Strategist</div>
-          </div>
-
-          <!-- Member 4 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_4_clean.png" alt="David Thorne" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black">David Thorne</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Lead Media Buyer</div>
-          </div>
-
-          <!-- Member 5 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_5_clean.png" alt="Lucas Ramos" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black">Lucas Ramos</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Viral Video Ops</div>
-          </div>
-
-          <!-- Member 6 -->
-          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
-            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
-              <img src="assets/team_6_clean.png" alt="Mia Lindqvist" class="w-full h-full object-cover img-zoom grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
-            </div>
-            <div class="text-xs font-bold uppercase text-astro-black">Mia Lindqvist</div>
-            <div class="text-[10px] font-mono text-astro-subtext uppercase">Data Architect</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: LET'S GET IN TOUCH (CONTACT) -->
-    <section id="contact" class="py-20 bg-[#FAFAFA] border-b border-technical">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          <!-- Left Column Info -->
-          <div class="lg:col-span-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="red-dot"></span>
-              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Initiate Mission</span>
-            </div>
-            <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black leading-none mb-6">
-              LET'S<br>GET IN<br>TOUCH
-            </h2>
-            <p class="text-sm text-astro-subtext leading-relaxed max-w-sm mb-8">
-              Tell us about your brand, current monthly ad spend, and growth goals. Our mission directors will review your accounts and deliver a customized scale audit within 24 hours.
+            <h3 class="case-client-name">
+              <span>Julian Vance</span>
+              <span class="case-roas-tag">42M VIEWS</span>
+            </h3>
+            <p class="case-quote">
+              "At Hyperion Wearables, we struggled with ad fatigue. Astropulse deployed an algorithmic Shorts &amp; Reels matrix that generated 42M organic-assisted impressions and cut our CPA by 44%."
             </p>
+          </article>
 
-            <div class="space-y-3 font-mono text-xs text-astro-subtext">
-              <div>COMM CHANNEL: <span class="text-astro-black font-semibold">missions@astropulse.agency</span></div>
-              <div>HOTLINE: <span class="text-astro-black font-semibold">+1 (800) 420-ASTRO</span></div>
-              <div>HQ: <span class="text-astro-black font-semibold">Silicon Valley / Global Telemetry Hub</span></div>
+          <article class="case-card">
+            <div class="case-photo-wrap">
+              <img src="assets/custom_case_3.png" alt="Dante Kael — Veloce Audio" />
             </div>
-          </div>
-
-          <!-- Right Column Minimalist Technical Form -->
-          <div class="lg:col-span-7 bg-white p-8 sm:p-12 border border-technical shadow-sm">
-            <form id="mission-form" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-6">
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
-                    Commander Name *
-                  </label>
-                  <input 
-                    type="text" 
-                    required 
-                    placeholder="e.g. Alex Rivera" 
-                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
-                  >
-                </div>
-                <div>
-                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
-                    Transmission Email *
-                  </label>
-                  <input 
-                    type="email" 
-                    required 
-                    placeholder="alex@company.com" 
-                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
-                  >
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
-                    Brand Website / Social Handle *
-                  </label>
-                  <input 
-                    type="text" 
-                    required 
-                    placeholder="@brand or yourbrand.com" 
-                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
-                  >
-                </div>
-                <div>
-                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
-                    Monthly Ad Budget *
-                  </label>
-                  <select class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors">
-                    <option>$5,000 - $15,000 / month</option>
-                    <option selected>$15,000 - $50,000 / month</option>
-                    <option>$50,000 - $150,000 / month</option>
-                    <option>$150,000+ / month (Enterprise)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
-                  Mission Objectives & Current Bottlenecks
-                </label>
-                <textarea 
-                  rows="4" 
-                  placeholder="Describe your current CAC, platform challenges, or scaling target..." 
-                  class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
-                ></textarea>
-              </div>
-
-              <div class="pt-4 flex items-center justify-between">
-                <div class="text-[11px] font-mono text-astro-subtext flex items-center gap-2">
-                  <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                  <span>ENCRYPTED PROTOCOL 256-BIT</span>
-                </div>
-
-                <button 
-                  type="submit" 
-                  class="px-8 py-4 bg-astro-red text-white font-bold text-xs uppercase tracking-widest flex items-center gap-3 btn-red-hover group shadow-md"
-                >
-                  <span>Initialize Launch</span>
-                  <span class="transform group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-              </div>
-
-              <!-- Form Success Feedback Alert -->
-              <div id="form-feedback" class="hidden p-4 bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono">
-                ✓ MISSION BRIEF RECEIVED. Our telemetry team will establish communications within 24 hours.
-              </div>
-
-            </form>
-          </div>
-
+            <h3 class="case-client-name">
+              <span>Dante Kael</span>
+              <span class="case-roas-tag">5.2X SCALE</span>
+            </h3>
+            <p class="case-quote">
+              "We came to Astropulse for paid social media buying across 8 European markets, and what we got was a full orbital telemetry system — transparent attribution and relentless profit scaling."
+            </p>
+          </article>
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
-    <section id="faq" class="py-20 bg-white">
-      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          <!-- Left Column Astronaut Visual for FAQ matching Behance -->
-          <div class="lg:col-span-5">
-            <div class="relative bg-astro-gray-bg border border-technical p-4 rounded-sm">
-              <div class="w-full aspect-[4/5] overflow-hidden relative bg-white">
-                <img 
-                  src="assets/faq_astronaut_exact.png" 
-                  alt="AstroPulse Telemetry Astronaut" 
-                  class="w-full h-full object-cover filter contrast-110"
-                >
-                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 border border-technical text-xs font-mono">
-                  <div class="text-astro-red font-bold mb-1">ASTROPULSE TELEMETRY LAB</div>
-                  <div class="text-astro-subtext">Direct answers to mission-critical questions regarding RoAS, creative cadence, and attribution.</div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- ======================================================================
+         07. ASTROPULSE AS A GLOBAL AGENCY (Multi-Tone Gray Bento Grid)
+         ====================================================================== -->
+    <section id="advantages" class="global-section">
 
-          <!-- Right Column FAQ Accordion -->
-          <div class="lg:col-span-7">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="red-dot"></span>
-              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Clarifications</span>
-            </div>
-            <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-astro-black mb-10">
-              FREQUENTLY<br>QUESTIONS
-            </h2>
-
-            <div class="border-t border-technical divide-y divide-technical" id="faq-container">
-              
-              <!-- FAQ Item 1 (Open by default) -->
-              <div class="faq-item py-6">
-                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
-                  <span class="text-base sm:text-lg font-bold text-astro-red group-hover:text-astro-red-dark transition-colors">
-                    What kind of results can we expect, and how soon?
-                  </span>
-                  <span class="faq-icon text-astro-red font-mono font-bold text-lg ml-4">−</span>
-                </button>
-                <div class="faq-answer mt-4 text-sm text-astro-subtext leading-relaxed">
-                  During the initial 14-day Sprint 0, we conduct exhaustive audience reconnaissance, install server-side telemetry (CAPI), and deploy our first wave of creative batches. Most partner brands see measurable CAC reductions within 18–25 days, with full scale-up occurring in months 2 through 4.
-                </div>
-              </div>
-
-              <!-- FAQ Item 2 -->
-              <div class="faq-item py-6">
-                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
-                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
-                    Do you execute organic viral networks, paid ads, or both?
-                  </span>
-                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
-                </button>
-                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
-                  We specialize in the synthesis of both. Paid ads provide guaranteed distribution, instant telemetry, and deterministic revenue. Organic short-form video builds social proof, loyalty, and brand affinity. When synchronized, organic winners are immediately converted into high-performing paid spark ads.
-                </div>
-              </div>
-
-              <!-- FAQ Item 3 -->
-              <div class="faq-item py-6">
-                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
-                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
-                    How do you track conversions and guarantee genuine RoAS?
-                  </span>
-                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
-                </button>
-                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
-                  We don't rely on platform-reported vanity numbers. We implement triple-layer tracking using server-side pixels, first-party cookie infrastructure, and post-purchase attribution surveys. You get direct access to a real-time blended dashboard showing exact cash-in vs. ad spend.
-                </div>
-              </div>
-
-              <!-- FAQ Item 4 -->
-              <div class="faq-item py-6">
-                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
-                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
-                    What industries and business types do you work with?
-                  </span>
-                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
-                </button>
-                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
-                  We partner primarily with high-velocity consumer goods (ecommerce), creator-led brands, high-ticket tech hardware, and consumer mobile apps with proven product-market fit spending at least $10,000/month on customer acquisition.
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-technical pt-16 pb-12">
-    <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-      
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start pb-12 border-b border-technical">
-        
-        <!-- Brand & Coordinates -->
-        <div class="md:col-span-4">
-          <a href="#hero" class="flex items-center gap-2 mb-4">
-            <span class="font-black text-2xl tracking-tighter uppercase text-astro-black">
-              ASTRO<span class="text-astro-red">.</span>PULSE
-            </span>
-            <div class="w-2 h-2 bg-astro-red"></div>
-          </a>
-          <p class="text-xs text-astro-subtext leading-relaxed max-w-xs mb-6">
-            Global Social Media Growth & Algorithmic Media Buying Agency. Elevating brands into high-orbit market dominance.
+      <div class="astro-row global-header-row">
+        <div class="global-left-note">
+          <span class="sq-black"></span>
+          <p class="global-left-note__text">
+            <span class="text-crimson">Targeted traffic.</span><br />
+            Consistent global<br />
+            reach.
           </p>
-          <div class="text-[11px] font-mono text-astro-subtext space-y-1">
-            <div>GLOBAL HQ: 100 MISSION ST, SAN FRANCISCO, CA</div>
-            <div>COORDINATES: 37.7913° N, 122.3970° W</div>
-            <div>STATUS: ONLINE 24/7/365</div>
+          <a href="#contact" class="link-underlined">More Info</a>
+        </div>
+
+        <div class="global-right-title">
+          <h2 class="global-title">
+            <span class="fw-500">ASTROPULSE</span> <span class="fw-300">AS</span> <span class="fw-500">A</span><br />
+            <span class="fw-400 text-crimson">GLOBAL</span> <span class="fw-300">AGENCY</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Top Row: 2 Wide Gray Blocks -->
+      <div class="bento-top-row">
+        <div class="bento-card">
+          <div class="bento-card__top">
+            <span class="bento-number">140M+</span>
+            <span class="telemetry-tag text-titanium">VERIFIED IMPRESSIONS</span>
+          </div>
+          <span class="bento-label">qualified social impressions delivered worldwide</span>
+        </div>
+
+        <div class="bento-card bento-card--tone-2">
+          <div class="bento-card__top">
+            <span class="bento-number">12+</span>
+            <p class="bento-micro-note">
+              Localized ad operations and native creator networks active across North America, Europe, MENA, and APAC.
+            </p>
+          </div>
+          <span class="bento-label">countries of active orbital operation</span>
+        </div>
+      </div>
+
+      <!-- Bottom Row: 3 Layered Gray Blocks -->
+      <div class="bento-bottom-row">
+        <div class="bento-card bento-card--tone-2">
+          <div class="bento-card__top">
+            <span class="bento-number">18+</span>
+          </div>
+          <span class="bento-label">media buyers &amp; creative engineers on the team</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-card__top">
+            <span class="bento-number">4</span>
+          </div>
+          <span class="bento-label">years dominating algorithmic social media</span>
+        </div>
+
+        <div class="bento-card bento-card--tone-3">
+          <div class="bento-card__top">
+            <span class="bento-number">97%</span>
+            <p class="bento-micro-note">
+              Audited partner retention rate over 12 consecutive billing cycles.
+            </p>
+          </div>
+          <span class="bento-label">client retention rate across scaled accounts</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================
+         08. OUR TEAM (6 Custom Monochrome/Duotone Portraits in Staggered Skyline)
+         ====================================================================== -->
+    <section id="team" class="team-section">
+      <div class="team-header">
+        <h2 class="team-title">
+          <span class="fw-400">OUR</span> <span class="fw-400 text-crimson">TEAM</span>
+        </h2>
+      </div>
+
+      <div class="team-skyline">
+        <!-- 1: Shorter with Crimson Band -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_4.png" alt="Kaelen Voss — Paid Social Specialist" />
+          </div>
+          <span class="crew-role">Paid Social Specialist</span>
+          <span class="crew-sub">META &amp; TIKTOK OPS</span>
+        </div>
+
+        <!-- 2: Medium-Tall Monochrome -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_2.png" alt="Soren Lindqvist — Data Strategist" />
+          </div>
+          <span class="crew-role">Data Strategist</span>
+          <span class="crew-sub">CAPI &amp; ATTRIBUTION</span>
+        </div>
+
+        <!-- 3: Tallest Centerpiece with Crimson Band -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_1.png" alt="Linnea Chen — Managing Director" />
+          </div>
+          <span class="crew-role">Managing Director</span>
+          <span class="crew-sub">FLIGHT COMMAND</span>
+        </div>
+
+        <!-- 4: Shorter Monochrome -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_5.png" alt="Nadia Vance — Creator Ops Manager" />
+          </div>
+          <span class="crew-role">Creator Ops Manager</span>
+          <span class="crew-sub">UGC &amp; SPARK ADS</span>
+        </div>
+
+        <!-- 5: Medium with Crimson Band -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_3.png" alt="Valeria Cruz — CEO &amp; Founder" />
+          </div>
+          <span class="crew-role">CEO</span>
+          <span class="crew-sub">ORBITAL STRATEGY</span>
+        </div>
+
+        <!-- 6: Medium-Tall Monochrome -->
+        <div class="crew-item">
+          <div class="crew-photo-box">
+            <img src="assets/custom_crew_6.png" alt="Marcus Sterling — Motion &amp; Ad Director" />
+          </div>
+          <span class="crew-role">Creative Director</span>
+          <span class="crew-sub">VIRAL LAB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         09. LET'S GET IN TOUCH (Staggered Title + Minimalist Bottom-Line Form)
+         ====================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="astro-row">
+
+        <!-- Col 1 -->
+        <div class="contact-col-1">
+          <span class="sq-crimson"></span>
+          <p class="hero-micro-copy">
+            Ready to launch your brand into high-converting social orbit? Transmit your coordinates below and our mission directors will respond within 24 hours.
+          </p>
+        </div>
+
+        <!-- Cols 2 & 3: Staggered Indented Headline -->
+        <div class="contact-col-2-3">
+          <h2 class="contact-staggered-title">
+            <span>LET'S</span>
+            <span class="indent-line">GET IN</span>
+            <span class="indent-line-sm">TOUCH</span>
+          </h2>
+        </div>
+
+        <!-- Col 4: Minimalist Line Inputs -->
+        <div class="contact-col-4">
+          <form class="minimal-form" onsubmit="event.preventDefault(); this.querySelector('.form-status').textContent = 'TRANSMISSION RECEIVED // MISSION CONTROL WILL CONTACT YOU WITHIN 24H.';">
+            <div class="input-line-group">
+              <input type="text" class="input-line" placeholder="First Name &amp; Brand" required />
+            </div>
+
+            <div class="form-row-split">
+              <div class="input-line-group">
+                <input type="email" class="input-line" placeholder="Work Email" required />
+              </div>
+              <div class="input-line-group">
+                <input type="tel" class="input-line" placeholder="Phone / Telegram" />
+              </div>
+            </div>
+
+            <div class="input-line-group">
+              <input type="text" class="input-line" placeholder="Monthly Ad Spend &amp; Target Platforms (TikTok, Meta, YouTube)" />
+            </div>
+
+            <div class="form-submit-row">
+              <span class="form-status telemetry-tag text-titanium">ENCRYPTED UPLINK // 256-BIT</span>
+              <button type="submit" class="submit-arrow-btn" aria-label="Submit Form">→</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. FREQUENTLY QUESTIONS (Left Custom Astronaut + Right Accordion)
+         ====================================================================== -->
+    <section id="faq" class="faq-section">
+      <div class="astro-row">
+
+        <!-- Col 1: Second Original Astronaut with Crimson Lower Block -->
+        <div class="faq-col-1">
+          <div class="faq-astronaut-box">
+            <img src="assets/custom_faq_astronaut.png" alt="Astropulse Orbital Specialist Astronaut" />
           </div>
         </div>
 
-        <!-- Quick Links -->
-        <div class="md:col-span-2">
-          <div class="text-xs font-mono font-bold uppercase tracking-wider text-astro-black mb-4">Protocols</div>
-          <ul class="space-y-2 text-xs font-mono text-astro-subtext">
-            <li><a href="#services" class="hover:text-astro-red">Audience Recon</a></li>
-            <li><a href="#services" class="hover:text-astro-red">Paid Acquisition</a></li>
-            <li><a href="#services" class="hover:text-astro-red">Viral Production</a></li>
-            <li><a href="#services" class="hover:text-astro-red">Telemetry Analytics</a></li>
-          </ul>
-        </div>
+        <!-- Col 2: Empty Structural Spacer Column (True to Behance Grid) -->
+        <div></div>
 
-        <!-- Navigation -->
-        <div class="md:col-span-2">
-          <div class="text-xs font-mono font-bold uppercase tracking-wider text-astro-black mb-4">Navigation</div>
-          <ul class="space-y-2 text-xs font-mono text-astro-subtext">
-            <li><a href="#hero" class="hover:text-astro-red">Mission Home</a></li>
-            <li><a href="#metrics" class="hover:text-astro-red">Global Telemetry</a></li>
-            <li><a href="#cases" class="hover:text-astro-red">Experience Deck</a></li>
-            <li><a href="#team" class="hover:text-astro-red">Our Crew</a></li>
-            <li><a href="#contact" class="hover:text-astro-red">Contact Us</a></li>
-          </ul>
-        </div>
+        <!-- Cols 3 & 4: FAQ Accordion + Bottom-Right Detail Thumb -->
+        <div class="faq-col-3-4">
+          <h2 class="faq-title">
+            <span class="fw-400">FREQUENTLY</span><br />
+            <span class="fw-400">QUESTIONS</span>
+          </h2>
 
-        <!-- Mini Astronaut Badge (Exact replica of Behance footer badge) -->
-        <div class="md:col-span-4 flex justify-start md:justify-end">
-          <div class="border border-technical p-3 bg-astro-gray-bg flex items-center gap-4 rounded-sm max-w-sm">
-            <div class="w-14 h-14 bg-white border border-technical overflow-hidden relative flex-shrink-0">
-              <img src="assets/case_3.png" alt="Mission Seal" class="w-full h-full object-cover grayscale contrast-125">
-              <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-astro-red"></div>
+          <div class="faq-list">
+            <div class="faq-item active" onclick="this.classList.toggle('active')">
+              <div class="faq-question">
+                <span>What kind of results can we expect, and how soon?</span>
+                <span>−</span>
+              </div>
+              <p class="faq-answer">
+                During the initial 14-day Sprint 0, we audit your pixel telemetry, install server-side CAPI, and launch our first wave of high-velocity creative hooks. Most brands see measurable CPA drops and RoAS lift within 14–21 days, with aggressive budget scaling in months 2–4.
+              </p>
             </div>
-            <div class="text-[11px] font-mono">
-              <div class="font-bold text-astro-black uppercase">ASTROPULSE CREW 2026</div>
-              <div class="text-astro-subtext">Propelling visionary brands beyond algorithmic horizons.</div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+              <div class="faq-question">
+                <span>Do you use organic viral strategies, paid ads, or both to scale traffic?</span>
+                <span>+</span>
+              </div>
+              <p class="faq-answer">
+                Both. We combine high-frequency organic short-form video testing (TikTok, Reels, Shorts) with surgical paid media buying (Spark Ads, Meta Advantage+), turning proven organic winners into scalable paid ad payloads.
+              </p>
             </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+              <div class="faq-question">
+                <span>Can you track conversions accurately post-iOS17 and provide live reports?</span>
+                <span>+</span>
+              </div>
+              <p class="faq-answer">
+                Yes. Every client receives a custom server-side tracking architecture and a 24/7 live telemetry dashboard displaying net RoAS, MER (Marketing Efficiency Ratio), hook hold-rates, and cohort LTV.
+              </p>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+              <div class="faq-question">
+                <span>What industries or types of brands have you scaled into orbit?</span>
+                <span>+</span>
+              </div>
+              <p class="faq-answer">
+                We specialize in high-growth DTC eCommerce, consumer tech hardware, SaaS apps, and digital consumer brands investing between $15,000 and $250,000+ per month in paid social acquisition.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-corner-thumb">
+            <img src="assets/custom_astronaut_thumb.png" alt="Telemetry Patch Detail" />
           </div>
         </div>
 
       </div>
+    </section>
 
-      <!-- Copyright Bottom Line -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-astro-subtext">
-        <div>
-          © 2026 ASTROPULSE AGENCY. ALL RIGHTS RESERVED.
-        </div>
-        <div class="flex items-center gap-6">
-          <a href="#" class="hover:text-astro-red">PRIVACY PROTOCOL</a>
-          <a href="#" class="hover:text-astro-red">TERMS OF ENGAGEMENT</a>
-          <a href="#" class="hover:text-astro-red">SECURITY AUDIT</a>
-        </div>
+  </div>
+
+  <!-- ========================================================================
+       11. FOOTER (Recessed Concrete Gray + Helmet Peek + SpaceX Bottom Seal)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="astro-shell">
+      <div class="grid-guides" aria-hidden="true">
+        <div></div><div></div><div></div><div></div>
       </div>
 
+      <div class="astro-row footer-main">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <a href="#" class="brand-logo">
+            <span>ASTRO</span>
+            <span>PULSE</span>
+          </a>
+          <span class="sq-crimson"></span>
+        </div>
+
+        <!-- Col 2 -->
+        <ul class="footer-info-list">
+          <li>mission@astropulse.agency</li>
+          <li>+1 (800) 420-ORBIT</li>
+          <li>Cape Canaveral / Madrid / NYC</li>
+        </ul>
+
+        <!-- Col 3 -->
+        <div class="footer-nav-grid">
+          <a href="#offer">What we offer</a>
+          <a href="#cases">Cases</a>
+          <a href="#advantages">Advantages</a>
+          <a href="#team">Our team</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Col 4 -->
+        <div></div>
+      </div>
+
+      <!-- Bottom-right peeking astronaut helmet block (exact Behance signature) -->
+      <div class="footer-helmet-peek">
+        <img src="assets/custom_faq_astronaut.png" alt="Astropulse Helmet Seal" />
+      </div>
+    </div>
+
+    <div class="spacex-bottom-seal">
+      <div class="spacex-bottom-seal__inner">
+        <span>© 2026 ASTROPULSE AGENCY. ALL ORBITAL RIGHTS RESERVED.</span>
+        <span>DESIGN SYSTEM: ASTRO TRAFFIC × SPACEX TELEMETRY</span>
+      </div>
     </div>
   </footer>
-
-  <!-- INTERACTIVITY SCRIPT -->
-  <script>
-    function toggleFaq(button) {
-      const parent = button.closest('.faq-item');
-      const answer = parent.querySelector('.faq-answer');
-      const icon = button.querySelector('.faq-icon');
-      const title = button.querySelector('span:first-child');
-      
-      const isHidden = answer.classList.contains('hidden');
-      
-      // Close all FAQs first
-      document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.faq-icon').forEach(el => {
-        el.textContent = '+';
-        el.classList.remove('text-astro-red');
-        el.classList.add('text-astro-black');
-      });
-      document.querySelectorAll('.faq-item span:first-child').forEach(el => {
-        el.classList.remove('text-astro-red');
-        el.classList.add('text-astro-black');
-      });
-
-      if (isHidden) {
-        answer.classList.remove('hidden');
-        icon.textContent = '−';
-        icon.classList.remove('text-astro-black');
-        icon.classList.add('text-astro-red');
-        title.classList.remove('text-astro-black');
-        title.classList.add('text-astro-red');
-      }
-    }
-
-    function handleFormSubmit() {
-      const feedback = document.getElementById('form-feedback');
-      feedback.classList.remove('hidden');
-      document.getElementById('mission-form').reset();
-      setTimeout(() => {
-        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 100);
-    }
-  </script>
 
 </body>
 </html>
