@@ -1,0 +1,12 @@
+# Python helper scripts
+crop_*.py
+extract_*.py
+find_*.py
+fix_*.py
+inspect_*.py
+__pycache__/
+*.pyc
+
+# OS Files
+.DS_Store
+Thumbs.db

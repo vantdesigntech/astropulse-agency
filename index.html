@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTROPULSE — Social Media Marketing & Algorithmic Growth Agency</title>
+  
+  <!-- Inter font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            'astro-red': '#AF181A',
+            'astro-red-dark': '#8e1214',
+            'astro-black': '#101010',
+            'astro-gray-bg': '#F5F5F7',
+            'astro-gray-card': '#EAEAEA',
+            'astro-border': 'rgba(16, 16, 16, 0.1)',
+            'astro-subtext': '#606060',
+          },
+          letterSpacing: {
+            tighter: '-0.04em',
+            tight: '-0.02em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #101010;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Red square marker */
+    .red-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #AF181A;
+      margin-right: 6px;
+    }
+
+    /* Grid lines */
+    .border-technical {
+      border-color: rgba(16, 16, 16, 0.1);
+    }
+
+    /* Vertical text */
+    .vertical-lr {
+      writing-mode: vertical-lr;
+    }
+
+    /* Accordion transitions */
+    .faq-answer {
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Smooth button hover */
+    .btn-red-hover {
+      transition: all 0.25s ease;
+    }
+    .btn-red-hover:hover {
+      background-color: #8e1214;
+      transform: translateY(-1px);
+    }
+
+    /* Image zoom on hover */
+    .img-zoom {
+      transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body class="selection:bg-astro-red selection:text-white">
+
+  <!-- TOP TECHNICAL BAR -->
+  <div class="border-b border-technical py-2 px-6 lg:px-16 text-[11px] text-astro-subtext font-mono flex justify-between items-center tracking-wider uppercase">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span>MISSION STATUS: ACTIVE LAUNCH</span>
+      <span class="hidden sm:inline text-gray-300">|</span>
+      <span class="hidden sm:inline">COORDINATES: TIKTOK / META / YOUTUBE</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <span>TELEMETRY: LIVE</span>
+      <span>EST. 2026</span>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-technical transition-all duration-200">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="font-extrabold text-2xl tracking-tighter uppercase text-astro-black">
+          ASTRO<span class="text-astro-red">.</span>PULSE
+        </span>
+        <div class="w-2 h-2 bg-astro-red"></div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-semibold tracking-wide uppercase">
+        <a href="#services" class="text-astro-subtext hover:text-astro-black transition-colors">What We Offer</a>
+        <a href="#metrics" class="text-astro-subtext hover:text-astro-black transition-colors">Global Agency</a>
+        <a href="#cases" class="text-astro-subtext hover:text-astro-black transition-colors">Experience</a>
+        <a href="#team" class="text-astro-subtext hover:text-astro-black transition-colors">Our Team</a>
+        <a href="#faq" class="text-astro-subtext hover:text-astro-black transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Action -->
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-3 border border-astro-black text-xs font-bold uppercase tracking-wider text-astro-black hover:bg-astro-black hover:text-white transition-all duration-200">
+          Launch Mission
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center px-4 py-3 bg-astro-red text-white text-xs font-bold uppercase tracking-wider btn-red-hover">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative border-b border-technical overflow-hidden pt-8 lg:pt-14 pb-12 lg:pb-16 bg-[#FAFAFA]">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Column: Title & Mission Description -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="red-dot"></span>
+                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-astro-red">
+                  Targeted Social Media Traffic & Media Buying
+                </span>
+              </div>
+
+              <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black uppercase tracking-tighter leading-[0.92] text-astro-black mb-6">
+                ASTRO<br>PULSE
+              </h1>
+
+              <p class="text-base text-astro-subtext font-normal leading-relaxed max-w-md mb-8">
+                We're not here for empty clicks — we're here for scale. With data-backed media buying, aggressive creative testing, and multi-platform algorithmic optimization, we turn ad spend into exponential brand revenue.
+              </p>
+            </div>
+
+            <!-- Floating Technical Micro-Card -->
+            <div class="p-5 bg-white border border-technical rounded-sm shadow-sm flex items-start gap-4 max-w-md">
+              <div class="w-14 h-14 bg-astro-gray-bg border border-technical flex-shrink-0 overflow-hidden relative">
+                <img src="assets/case_1.png" alt="Campaign telemetry" class="w-full h-full object-cover grayscale contrast-125">
+                <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-astro-red"></div>
+              </div>
+              <div class="flex-1 text-xs">
+                <div class="font-bold uppercase tracking-tight text-astro-black mb-1">
+                  Algorithmic Recon & Growth
+                </div>
+                <p class="text-astro-subtext leading-relaxed mb-2">
+                  Hyper-targeted paid distribution with real-time conversion feedback across TikTok and Meta.
+                </p>
+                <a href="#services" class="font-bold text-astro-red hover:underline flex items-center gap-1">
+                  Explore Mission Protocols <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="flex items-center gap-6 mt-8 pt-6 border-t border-technical text-xs font-bold uppercase tracking-wider">
+              <a href="#contact" class="hover:text-astro-red transition-colors flex items-center gap-1.5">
+                <span>▪</span> Book Discovery Call
+              </a>
+              <a href="#metrics" class="text-astro-subtext hover:text-astro-black transition-colors">
+                View 2026 Telemetry
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Astronaut Visual & Red Accent -->
+          <div class="lg:col-span-7 relative">
+            <div class="relative bg-white border border-technical p-4 sm:p-6 shadow-xl overflow-hidden rounded-sm">
+              
+              <!-- Astronaut Hero Graphic -->
+              <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] bg-[#F3F3F3] flex items-center justify-center overflow-hidden">
+                <img 
+                  src="assets/hero_astronaut_pure.png" 
+                  alt="AstroPulse Commander" 
+                  class="w-full h-full object-cover object-center filter contrast-105"
+                >
+
+                <!-- Lateral Mission Label -->
+                <div class="absolute top-6 right-6 hidden sm:flex items-center gap-2">
+                  <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-astro-black bg-white/90 backdrop-blur px-2.5 py-1 border border-technical">
+                    ALGORITHMIC UNIT 01
+                  </span>
+                </div>
+
+                <!-- Floating Mission Tag on the left -->
+                <div class="absolute bottom-6 left-6 hidden sm:block bg-white/95 backdrop-blur px-3 py-1.5 border border-technical text-[10px] font-mono font-bold uppercase tracking-wider text-astro-black">
+                  <span class="text-astro-red">●</span> ORBITAL MEDIA BUYING
+                </div>
+
+                <!-- Interactive Corner Action -->
+                <a href="#services" class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 bg-astro-black text-white flex items-center justify-center text-lg font-bold hover:bg-astro-red transition-all duration-200 group">
+                  <span class="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+                </a>
+              </div>
+
+              <!-- Bottom Strip of Hero Card -->
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-astro-subtext pt-2 border-t border-technical">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-astro-red"></span>
+                  <span>CAMPAIGN PROTOCOL: FULL REACH</span>
+                </div>
+                <div>AVG ROAS: <span class="font-bold text-astro-black font-sans">4.8X</span></div>
+                <div class="hidden sm:block">STATUS: MISSION READY</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION TITLE: WHAT WE OFFER -->
+    <section id="services" class="pt-20 pb-12 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex items-baseline gap-4 mb-2">
+          <span class="w-3 h-3 bg-astro-red"></span>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-astro-red">Protocols & Capabilities</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black mb-12">
+          WHAT WE OFFER
+        </h2>
+
+        <!-- Services Accordion / List (01 to 04 exactly matching reference) -->
+        <div class="border-t border-technical divide-y divide-technical">
+          
+          <!-- 01 ANALYZE AUDIENCE -->
+          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div class="md:col-span-2 flex items-baseline gap-4">
+                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">01</span>
+                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Telemetry</span>
+              </div>
+              <div class="md:col-span-5">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
+                  ANALYZE AUDIENCE
+                </h3>
+                <p class="text-sm font-mono text-astro-subtext mt-1">
+                  Algorithmic Profiling & Competitor Reverse-Engineering
+                </p>
+              </div>
+              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
+                We start by dismantling your target audience's digital footprint. Through deep demographic mining, social search behavior analysis, and subculture mapping on TikTok and Instagram, we identify the exact triggers that stop the scroll and build immediate brand resonance.
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 TARGET TRAFFIC -->
+          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div class="md:col-span-2 flex items-baseline gap-4">
+                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">02</span>
+                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Acquisition</span>
+              </div>
+              <div class="md:col-span-5">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
+                  TARGET TRAFFIC
+                </h3>
+                <p class="text-sm font-mono text-astro-subtext mt-1">
+                  Paid Social & High-Conversion Funneling
+                </p>
+              </div>
+              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
+                Using surgical media buying architectures on Meta Ads, TikTok Spark Ads, and YouTube Shorts, we drive hyper-qualified prospects directly to high-converting landing pages. Every ad dollar is backed by rapid multivariate testing to guarantee maximum return on ad spend.
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 OPTIMIZE CONVERSIONS -->
+          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div class="md:col-span-2 flex items-baseline gap-4">
+                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">03</span>
+                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Creative Ops</span>
+              </div>
+              <div class="md:col-span-5">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
+                  OPTIMIZE CONVERSIONS
+                </h3>
+                <p class="text-sm font-mono text-astro-subtext mt-1">
+                  Viral Creative Production & Attention Retention
+                </p>
+              </div>
+              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
+                Traffic is useless if it doesn't convert. Our creative lab produces high-octane UGC, 3D motion assets, and psychological 3-second hook scripts specifically engineered to turn passive viewers into active customers and high-LTV brand advocates.
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 MEASURE RESULTS -->
+          <div class="group py-8 sm:py-10 transition-colors hover:bg-astro-gray-bg/50 px-2 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div class="md:col-span-2 flex items-baseline gap-4">
+                <span class="text-2xl sm:text-3xl font-extrabold text-astro-red font-mono">04</span>
+                <span class="text-xs font-mono uppercase tracking-wider text-astro-subtext hidden sm:inline">Telemetry</span>
+              </div>
+              <div class="md:col-span-5">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-astro-black group-hover:text-astro-red transition-colors">
+                  MEASURE RESULTS
+                </h3>
+                <p class="text-sm font-mono text-astro-subtext mt-1">
+                  First-Party Telemetry & Attribution Systems
+                </p>
+              </div>
+              <div class="md:col-span-5 text-sm text-astro-subtext leading-relaxed">
+                We bypass cookie deprecation with server-side Conversion APIs (CAPI), multi-touch attribution modeling, and automated weekly sprint reports. You get complete transparency on blended RoAS, CAC, retention curves, and scaling velocity.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: OUR EXPERIENCE — OUR PRIDE & CASE STUDIES -->
+    <section id="cases" class="py-20 bg-astro-gray-bg border-y border-technical">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+          
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="red-dot"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Proven Flight Record</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-astro-black leading-tight mb-4">
+              OUR EXPERIENCE<br>— OUR PRIDE
+            </h2>
+            <p class="text-sm text-astro-subtext leading-relaxed mb-6">
+              Every campaign is executed like a space mission: zero margin for error, relentless telemetry, and hyper-scalable momentum across competitive markets.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-astro-black hover:text-astro-red transition-colors">
+              Request Full Case Decks <span>→</span>
+            </a>
+          </div>
+
+          <!-- 3 Editorial Case Cards with exact photo treatment -->
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            
+            <!-- Case 1 -->
+            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
+              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
+                <img src="assets/case_1_clean.png" alt="Emma Collins - Campaign Lead" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-red/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
+                  +340% ROAS SCALE
+                </div>
+              </div>
+              <div class="text-xs font-bold uppercase text-astro-black mb-1">NOVA AUDIO TECH</div>
+              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">TIKTOK & META ADS</div>
+              <p class="text-xs text-astro-subtext leading-relaxed">
+                Scaled direct-to-consumer headphone brand from $45k/mo to $380k/mo in 90 days with algorithmic UGC.
+              </p>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
+              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
+                <img src="assets/case_2_clean.png" alt="Jason Miller - Creative Lead" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-black/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
+                  42M VIRAL VIEWS
+                </div>
+              </div>
+              <div class="text-xs font-bold uppercase text-astro-black mb-1">PULSAR ENERGY</div>
+              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">ORGANIC VIRAL OPS</div>
+              <p class="text-xs text-astro-subtext leading-relaxed">
+                Engineered 14 consecutive viral short-form videos capturing top market share in fitness beverage niche.
+              </p>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="bg-white border border-technical p-4 flex flex-col group hover:shadow-lg transition-all duration-300">
+              <div class="w-full aspect-[4/5] bg-astro-gray-card overflow-hidden relative mb-4">
+                <img src="assets/case_3_clean.png" alt="Daniel Brooks - Media Buyer" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+                <div class="absolute bottom-0 left-0 right-0 h-10 bg-astro-red/90 flex items-center px-3 text-white text-[11px] font-mono font-bold tracking-wider uppercase">
+                  5.2X BLENDED ROAS
+                </div>
+              </div>
+              <div class="text-xs font-bold uppercase text-astro-black mb-1">AETHEL APPAREL</div>
+              <div class="text-[11px] font-mono text-astro-red font-semibold mb-2">GLOBAL EXPANSION</div>
+              <p class="text-xs text-astro-subtext leading-relaxed">
+                Orchestrated paid acquisition rollout into 6 European markets simultaneously with localized creative variations.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: ASTROPULSE AS A GLOBAL AGENCY (METRICS 100+, 12+, 18+, 4, 97%) -->
+    <section id="metrics" class="py-20 bg-white border-b border-technical">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="red-dot"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Global Orbit</span>
+            </div>
+            <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black">
+              ASTROPULSE AS A<br><span class="text-astro-red">GLOBAL</span> AGENCY
+            </h2>
+          </div>
+          <p class="text-xs font-mono text-astro-subtext max-w-xs leading-relaxed uppercase">
+            AUDITED PERFORMANCE METRICS CUMULATIVE ACROSS 24 MONTHS OF ACTIVE MEDIA BUYING
+          </p>
+        </div>
+
+        <!-- Metric Grid identical to reference layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          <!-- Metric 1: 140M+ -->
+          <div class="md:col-span-6 bg-astro-gray-bg border border-technical p-8 sm:p-10 rounded-sm hover:border-astro-black transition-colors">
+            <div class="text-6xl sm:text-7xl font-black tracking-tighter text-astro-black mb-3 font-sans">
+              140M+
+            </div>
+            <div class="text-sm font-bold uppercase text-astro-black mb-1">
+              Qualified Organic & Paid Impressions
+            </div>
+            <p class="text-xs text-astro-subtext leading-relaxed max-w-md">
+              Delivered across TikTok, Meta, and YouTube with audience retention curves exceeding industry averages by 44%.
+            </p>
+          </div>
+
+          <!-- Metric 2: 4.8X -->
+          <div class="md:col-span-6 bg-astro-gray-bg border border-technical p-8 sm:p-10 rounded-sm hover:border-astro-black transition-colors">
+            <div class="text-6xl sm:text-7xl font-black tracking-tighter text-astro-red mb-3 font-sans">
+              4.8x
+            </div>
+            <div class="text-sm font-bold uppercase text-astro-black mb-1">
+              Average Blended Return on Ad Spend (RoAS)
+            </div>
+            <p class="text-xs text-astro-subtext leading-relaxed max-w-md">
+              Proven performance across ecommerce, SaaS, and high-growth consumer products through real-time creative iteration.
+            </p>
+          </div>
+
+          <!-- Metric 3: 18+ -->
+          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
+            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
+              18+
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black mb-1">
+              International Markets
+            </div>
+            <p class="text-[11px] text-astro-subtext leading-relaxed">
+              Active campaigns deployed in North America, Europe, UAE, and Latin America.
+            </p>
+          </div>
+
+          <!-- Metric 4: 4 -->
+          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
+            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
+              4
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black mb-1">
+              Proprietary AI Growth Engines
+            </div>
+            <p class="text-[11px] text-astro-subtext leading-relaxed">
+              In-house trend scrapers, hook analyzers, UGC pipelines, and bidding algorithms.
+            </p>
+          </div>
+
+          <!-- Metric 5: 97% -->
+          <div class="md:col-span-4 bg-astro-gray-bg border border-technical p-8 rounded-sm hover:border-astro-black transition-colors">
+            <div class="text-5xl sm:text-6xl font-black tracking-tighter text-astro-black mb-2 font-sans">
+              97%
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black mb-1">
+              Client Retention Rate
+            </div>
+            <p class="text-[11px] text-astro-subtext leading-relaxed">
+              Brands that partner with Astropulse stay for over 12 consecutive months of scaling.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: OUR TEAM -->
+    <section id="team" class="py-20 bg-white border-b border-technical">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <span class="red-dot"></span>
+            <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Mission Control Crew</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black">
+            OUR <span class="text-astro-red">TEAM</span>
+          </h2>
+          <p class="text-sm text-astro-subtext mt-4">
+            Elite media buyers, algorithmic strategists, and creative directors dedicated to launching your brand into stratosphere.
+          </p>
+        </div>
+
+        <!-- Team Gallery with matching red block aesthetics -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          
+          <!-- Member 1 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_1_clean.png" alt="Elena Vance" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">Elena Vance</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Head of Growth</div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_2_clean.png" alt="Marcus Drake" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">Marcus Drake</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Creative Director</div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_3_clean.png" alt="Sofia Chen" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">Sofia Chen</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Social Strategist</div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_4_clean.png" alt="David Thorne" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">David Thorne</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Lead Media Buyer</div>
+          </div>
+
+          <!-- Member 5 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_5_clean.png" alt="Lucas Ramos" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-red"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">Lucas Ramos</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Viral Video Ops</div>
+          </div>
+
+          <!-- Member 6 -->
+          <div class="border border-technical p-3 bg-white group hover:border-astro-red transition-all">
+            <div class="w-full aspect-[3/4] bg-astro-gray-card overflow-hidden relative mb-3">
+              <img src="assets/team_6_clean.png" alt="Mia Lindqvist" class="w-full h-full object-cover img-zoom grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-4 bg-astro-black"></div>
+            </div>
+            <div class="text-xs font-bold uppercase text-astro-black">Mia Lindqvist</div>
+            <div class="text-[10px] font-mono text-astro-subtext uppercase">Data Architect</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: LET'S GET IN TOUCH (CONTACT) -->
+    <section id="contact" class="py-20 bg-[#FAFAFA] border-b border-technical">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Column Info -->
+          <div class="lg:col-span-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="red-dot"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Initiate Mission</span>
+            </div>
+            <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-astro-black leading-none mb-6">
+              LET'S<br>GET IN<br>TOUCH
+            </h2>
+            <p class="text-sm text-astro-subtext leading-relaxed max-w-sm mb-8">
+              Tell us about your brand, current monthly ad spend, and growth goals. Our mission directors will review your accounts and deliver a customized scale audit within 24 hours.
+            </p>
+
+            <div class="space-y-3 font-mono text-xs text-astro-subtext">
+              <div>COMM CHANNEL: <span class="text-astro-black font-semibold">missions@astropulse.agency</span></div>
+              <div>HOTLINE: <span class="text-astro-black font-semibold">+1 (800) 420-ASTRO</span></div>
+              <div>HQ: <span class="text-astro-black font-semibold">Silicon Valley / Global Telemetry Hub</span></div>
+            </div>
+          </div>
+
+          <!-- Right Column Minimalist Technical Form -->
+          <div class="lg:col-span-7 bg-white p-8 sm:p-12 border border-technical shadow-sm">
+            <form id="mission-form" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-6">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
+                    Commander Name *
+                  </label>
+                  <input 
+                    type="text" 
+                    required 
+                    placeholder="e.g. Alex Rivera" 
+                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
+                  >
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
+                    Transmission Email *
+                  </label>
+                  <input 
+                    type="email" 
+                    required 
+                    placeholder="alex@company.com" 
+                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
+                  >
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
+                    Brand Website / Social Handle *
+                  </label>
+                  <input 
+                    type="text" 
+                    required 
+                    placeholder="@brand or yourbrand.com" 
+                    class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
+                  >
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
+                    Monthly Ad Budget *
+                  </label>
+                  <select class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors">
+                    <option>$5,000 - $15,000 / month</option>
+                    <option selected>$15,000 - $50,000 / month</option>
+                    <option>$50,000 - $150,000 / month</option>
+                    <option>$150,000+ / month (Enterprise)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-mono uppercase tracking-wider text-astro-subtext mb-2">
+                  Mission Objectives & Current Bottlenecks
+                </label>
+                <textarea 
+                  rows="4" 
+                  placeholder="Describe your current CAC, platform challenges, or scaling target..." 
+                  class="w-full bg-astro-gray-bg border border-technical px-4 py-3 text-sm text-astro-black focus:outline-none focus:border-astro-red transition-colors"
+                ></textarea>
+              </div>
+
+              <div class="pt-4 flex items-center justify-between">
+                <div class="text-[11px] font-mono text-astro-subtext flex items-center gap-2">
+                  <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                  <span>ENCRYPTED PROTOCOL 256-BIT</span>
+                </div>
+
+                <button 
+                  type="submit" 
+                  class="px-8 py-4 bg-astro-red text-white font-bold text-xs uppercase tracking-widest flex items-center gap-3 btn-red-hover group shadow-md"
+                >
+                  <span>Initialize Launch</span>
+                  <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+              </div>
+
+              <!-- Form Success Feedback Alert -->
+              <div id="form-feedback" class="hidden p-4 bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono">
+                ✓ MISSION BRIEF RECEIVED. Our telemetry team will establish communications within 24 hours.
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column Astronaut Visual for FAQ matching Behance -->
+          <div class="lg:col-span-5">
+            <div class="relative bg-astro-gray-bg border border-technical p-4 rounded-sm">
+              <div class="w-full aspect-[4/5] overflow-hidden relative bg-white">
+                <img 
+                  src="assets/faq_astronaut_exact.png" 
+                  alt="AstroPulse Telemetry Astronaut" 
+                  class="w-full h-full object-cover filter contrast-110"
+                >
+                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 border border-technical text-xs font-mono">
+                  <div class="text-astro-red font-bold mb-1">ASTROPULSE TELEMETRY LAB</div>
+                  <div class="text-astro-subtext">Direct answers to mission-critical questions regarding RoAS, creative cadence, and attribution.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column FAQ Accordion -->
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="red-dot"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-astro-red font-bold">Clarifications</span>
+            </div>
+            <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-astro-black mb-10">
+              FREQUENTLY<br>QUESTIONS
+            </h2>
+
+            <div class="border-t border-technical divide-y divide-technical" id="faq-container">
+              
+              <!-- FAQ Item 1 (Open by default) -->
+              <div class="faq-item py-6">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
+                  <span class="text-base sm:text-lg font-bold text-astro-red group-hover:text-astro-red-dark transition-colors">
+                    What kind of results can we expect, and how soon?
+                  </span>
+                  <span class="faq-icon text-astro-red font-mono font-bold text-lg ml-4">−</span>
+                </button>
+                <div class="faq-answer mt-4 text-sm text-astro-subtext leading-relaxed">
+                  During the initial 14-day Sprint 0, we conduct exhaustive audience reconnaissance, install server-side telemetry (CAPI), and deploy our first wave of creative batches. Most partner brands see measurable CAC reductions within 18–25 days, with full scale-up occurring in months 2 through 4.
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item py-6">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
+                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
+                    Do you execute organic viral networks, paid ads, or both?
+                  </span>
+                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
+                </button>
+                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
+                  We specialize in the synthesis of both. Paid ads provide guaranteed distribution, instant telemetry, and deterministic revenue. Organic short-form video builds social proof, loyalty, and brand affinity. When synchronized, organic winners are immediately converted into high-performing paid spark ads.
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item py-6">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
+                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
+                    How do you track conversions and guarantee genuine RoAS?
+                  </span>
+                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
+                </button>
+                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
+                  We don't rely on platform-reported vanity numbers. We implement triple-layer tracking using server-side pixels, first-party cookie infrastructure, and post-purchase attribution surveys. You get direct access to a real-time blended dashboard showing exact cash-in vs. ad spend.
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item py-6">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left group">
+                  <span class="text-base sm:text-lg font-bold text-astro-black group-hover:text-astro-red transition-colors">
+                    What industries and business types do you work with?
+                  </span>
+                  <span class="faq-icon text-astro-black font-mono font-bold text-lg ml-4">+</span>
+                </button>
+                <div class="faq-answer hidden mt-4 text-sm text-astro-subtext leading-relaxed">
+                  We partner primarily with high-velocity consumer goods (ecommerce), creator-led brands, high-ticket tech hardware, and consumer mobile apps with proven product-market fit spending at least $10,000/month on customer acquisition.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-technical pt-16 pb-12">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start pb-12 border-b border-technical">
+        
+        <!-- Brand & Coordinates -->
+        <div class="md:col-span-4">
+          <a href="#hero" class="flex items-center gap-2 mb-4">
+            <span class="font-black text-2xl tracking-tighter uppercase text-astro-black">
+              ASTRO<span class="text-astro-red">.</span>PULSE
+            </span>
+            <div class="w-2 h-2 bg-astro-red"></div>
+          </a>
+          <p class="text-xs text-astro-subtext leading-relaxed max-w-xs mb-6">
+            Global Social Media Growth & Algorithmic Media Buying Agency. Elevating brands into high-orbit market dominance.
+          </p>
+          <div class="text-[11px] font-mono text-astro-subtext space-y-1">
+            <div>GLOBAL HQ: 100 MISSION ST, SAN FRANCISCO, CA</div>
+            <div>COORDINATES: 37.7913° N, 122.3970° W</div>
+            <div>STATUS: ONLINE 24/7/365</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-2">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-astro-black mb-4">Protocols</div>
+          <ul class="space-y-2 text-xs font-mono text-astro-subtext">
+            <li><a href="#services" class="hover:text-astro-red">Audience Recon</a></li>
+            <li><a href="#services" class="hover:text-astro-red">Paid Acquisition</a></li>
+            <li><a href="#services" class="hover:text-astro-red">Viral Production</a></li>
+            <li><a href="#services" class="hover:text-astro-red">Telemetry Analytics</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation -->
+        <div class="md:col-span-2">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-astro-black mb-4">Navigation</div>
+          <ul class="space-y-2 text-xs font-mono text-astro-subtext">
+            <li><a href="#hero" class="hover:text-astro-red">Mission Home</a></li>
+            <li><a href="#metrics" class="hover:text-astro-red">Global Telemetry</a></li>
+            <li><a href="#cases" class="hover:text-astro-red">Experience Deck</a></li>
+            <li><a href="#team" class="hover:text-astro-red">Our Crew</a></li>
+            <li><a href="#contact" class="hover:text-astro-red">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Mini Astronaut Badge (Exact replica of Behance footer badge) -->
+        <div class="md:col-span-4 flex justify-start md:justify-end">
+          <div class="border border-technical p-3 bg-astro-gray-bg flex items-center gap-4 rounded-sm max-w-sm">
+            <div class="w-14 h-14 bg-white border border-technical overflow-hidden relative flex-shrink-0">
+              <img src="assets/case_3.png" alt="Mission Seal" class="w-full h-full object-cover grayscale contrast-125">
+              <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-astro-red"></div>
+            </div>
+            <div class="text-[11px] font-mono">
+              <div class="font-bold text-astro-black uppercase">ASTROPULSE CREW 2026</div>
+              <div class="text-astro-subtext">Propelling visionary brands beyond algorithmic horizons.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Line -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-astro-subtext">
+        <div>
+          © 2026 ASTROPULSE AGENCY. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-astro-red">PRIVACY PROTOCOL</a>
+          <a href="#" class="hover:text-astro-red">TERMS OF ENGAGEMENT</a>
+          <a href="#" class="hover:text-astro-red">SECURITY AUDIT</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- INTERACTIVITY SCRIPT -->
+  <script>
+    function toggleFaq(button) {
+      const parent = button.closest('.faq-item');
+      const answer = parent.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+      const title = button.querySelector('span:first-child');
+      
+      const isHidden = answer.classList.contains('hidden');
+      
+      // Close all FAQs first
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(el => {
+        el.textContent = '+';
+        el.classList.remove('text-astro-red');
+        el.classList.add('text-astro-black');
+      });
+      document.querySelectorAll('.faq-item span:first-child').forEach(el => {
+        el.classList.remove('text-astro-red');
+        el.classList.add('text-astro-black');
+      });
+
+      if (isHidden) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+        icon.classList.remove('text-astro-black');
+        icon.classList.add('text-astro-red');
+        title.classList.remove('text-astro-black');
+        title.classList.add('text-astro-red');
+      }
+    }
+
+    function handleFormSubmit() {
+      const feedback = document.getElementById('form-feedback');
+      feedback.classList.remove('hidden');
+      document.getElementById('mission-form').reset();
+      setTimeout(() => {
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>
